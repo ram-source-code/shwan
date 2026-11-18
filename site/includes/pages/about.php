@@ -1,4 +1,3 @@
-<?php /** @var array $site */ ?>
 <section class="page-hero" aria-labelledby="page-title">
   <div class="wrap">
     <h1 id="page-title">About us</h1>

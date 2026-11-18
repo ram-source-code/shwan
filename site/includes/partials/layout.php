@@ -1,8 +1,4 @@
 <?php
-/** @var array $meta  title, description, path, [h1 handled by page] */
-/** @var array $site */
-/** @var string $content */
-/** @var string $nonce */
 $nav = ['/' => 'Home', '/about' => 'About', '/team' => 'Team', '/contact' => 'Contact'];
 $title = $meta['path'] === '/' ? $meta['title'] : $meta['title'] . ' | ' . SITE_NAME;
 $tel = 'tel:' . $site['phone'];

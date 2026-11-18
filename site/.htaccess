@@ -1,22 +1,16 @@
 Options -Indexes
 DirectoryIndex index.php
-# Files refused by the Require rules below never reach PHP; this keeps their 403 short and on-brand.
 ErrorDocument 403 "<!doctype html><html lang=en><meta charset=utf-8><meta name=viewport content='width=device-width'><title>Access denied | Entersoftgroup</title><body><h1>Access denied</h1><p>This address is not open to visitors. Entersoftgroup &middot; 0770 155 8796</p></body></html>"
 RewriteEngine On
 RewriteRule ^\.well-known/ - [L]
-# http -> https on the same host. The wrong-host redirect to CANONICAL_HOST is done in PHP (bootstrap.php),
-# so the same folder works on any domain set in .env. The first line skips it on a dev machine (private IP).
 RewriteCond %{SERVER_ADDR} !^(127\.|10\.|192\.168\.|172\.(1[6-9]|2[0-9]|3[01])\.|::1$)
 RewriteCond %{HTTPS} off
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-# blocked paths answer a styled 403 from index.php (FORBIDDEN flag); the FilesMatch rules below are the backstop
 RewriteRule (^|/)\. index.php [L,E=FORBIDDEN:1]
 RewriteRule ^(data|includes)(/|$) index.php [L,E=FORBIDDEN:1]
 RewriteRule \.(sqlite|sqlite3|db|log|json|md|env|example|bak|zip|flag|ini|sh)$ index.php [L,NC,E=FORBIDDEN:1]
-# one entry point: no PHP file but index.php runs, not even with a trailing /path
 RewriteCond %{REQUEST_URI} \.(php\d?|phtml|phar)(/|$) [NC]
 RewriteRule !^index\.php$ index.php [L,E=FORBIDDEN:1]
-# everything that isn't an existing file -> index.php. No RewriteBase: the folder works at any depth
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^ index.php [L]
 <FilesMatch "\.(sqlite|sqlite3|db|log|json|md|env|example|bak|zip|flag|ini|sh)$">

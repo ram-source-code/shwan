@@ -1,4 +1,3 @@
-/* Entersoftgroup — main stylesheet (inlined into every page with a CSP nonce). */
 :root {
   --navy: #0c3f68;
   --navy-deep: #082c4a;
@@ -34,7 +33,6 @@
   color-scheme: light;
 }
 
-/* ---------- Base ---------- */
 :where(.wrap, .btn, .menu-button, .site-menu, .site-menu a, .channel, .skills, .visit, .hero-figure, .hero-figure figcaption, .skip-link, .skill-meter, .error-page) { box-sizing: border-box; }
 html {
   -webkit-text-size-adjust: 100%;
@@ -88,7 +86,6 @@ address { font-style: normal; }
 .skip-link:focus { inset-block-start: 1rem; }
 main:focus { outline: none; }
 
-/* ---------- Buttons & links ---------- */
 .btn {
   display: inline-flex; align-items: center; justify-content: center; gap: 0.55em;
   min-block-size: 3rem; padding: 0.65rem 1.3rem;
@@ -117,7 +114,6 @@ main:focus { outline: none; }
 .link-arrow .icon { transition: translate 0.25s var(--ease-out); }
 .link-arrow:hover { text-decoration: underline; text-decoration-color: var(--orange); }
 
-/* ---------- Header & navigation ---------- */
 .site-header {
   position: sticky; inset-block-start: 0; z-index: 50;
   background: rgb(255 255 255 / 0.96);
@@ -175,7 +171,7 @@ main:focus { outline: none; }
   @starting-style { .site-menu:popover-open { opacity: 0; translate: 0 -0.5rem; } }
 }
 .is-measuring * { transition: none !important; }
-/* Wide layout: the same list inline (class set by main.js when the row fits) */
+
 .site-header.is-wide .menu-button { display: none; }
 .site-header.is-wide .site-menu {
   position: static; display: flex; align-items: center; gap: 0.25rem;
@@ -187,12 +183,11 @@ main:focus { outline: none; }
 
 .site-header.is-wide .site-menu .menu-call { padding: 0 0 0 0.75rem; }
 .site-header.is-wide .site-menu::backdrop { display: none; }
-/* No Popover API: show the list inline and let it wrap */
+
 .no-popover .menu-button { display: none; }
 .no-popover .header-inner { flex-wrap: wrap; }
 .no-popover .site-menu { position: static; display: flex; flex-wrap: wrap; inline-size: auto; max-inline-size: none; border: 0; box-shadow: none; padding: 0; margin: 0; }
 
-/* ---------- Hero ---------- */
 .hero {
   position: relative; overflow: clip;
   background:
@@ -228,7 +223,6 @@ main:focus { outline: none; }
 }
 .hero-figure figcaption strong { color: var(--navy); font-size: var(--step-0); }
 
-/* ---------- Sections ---------- */
 .section { padding-block: var(--space-section); }
 .section-tint { background: var(--tint); }
 .section-head { max-inline-size: 44rem; margin-block-end: clamp(2rem, 1rem + 2vw, 3rem); }
@@ -240,14 +234,12 @@ main:focus { outline: none; }
 .about-intro h2 { max-inline-size: 18ch; }
 .about-intro .lead-h { display: block; font-size: var(--step-1); color: var(--muted); font-family: var(--font-body); font-weight: 500; letter-spacing: 0; margin-block-start: 0.6rem; }
 
-/* Why choose us: a ruled list, not cards */
 .reasons { display: grid; gap: clamp(1.75rem, 1rem + 2vw, 2.75rem) clamp(1.5rem, 1rem + 2.5vw, 3.5rem); grid-template-columns: repeat(auto-fit, minmax(min(100%, 19rem), 1fr)); }
 .reason { padding-block: 0.25rem 0.5rem; }
 .reason h3 { display: flex; align-items: center; gap: 0.6rem; margin-block-end: 0.5rem; }
 .reason h3 .icon { color: var(--orange); inline-size: 1.6rem; block-size: 1.6rem; }
 .reason p { color: var(--muted); max-inline-size: 48ch; }
 
-/* Team */
 .team-grid { display: grid; gap: clamp(1.25rem, 1rem + 1.5vw, 2rem); grid-template-columns: repeat(2, minmax(0, 1fr)); }
 @media (min-width: 46rem) { .team-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
 .member { display: flex; flex-direction: column; }
@@ -257,7 +249,6 @@ main:focus { outline: none; }
 .member-role { color: var(--muted); margin: 0; font-weight: 550; }
 .member-lead .member-role { color: var(--navy); }
 
-/* About: training photo & skills */
 .facts-inline { margin-block-start: 2.5rem; }
 .split-center { align-items: center; }
 .skills { background: var(--ground); border-radius: var(--radius); padding: clamp(1.5rem, 1rem + 2vw, 2.5rem); box-shadow: var(--shadow); }
@@ -274,19 +265,16 @@ main:focus { outline: none; }
 .skill-meter::-webkit-meter-optimum-value { background: linear-gradient(90deg, var(--navy), var(--navy-bright)); border-radius: 999px; }
 .skill-meter::-moz-meter-bar { background: linear-gradient(90deg, var(--navy), var(--navy-bright)); border-radius: 999px; }
 
-/* Inner page heading band */
 .page-hero { background: var(--tint); padding-block: clamp(2.5rem, 1.5rem + 4vw, 5rem); }
 .page-hero h1 { font-size: var(--step-4); margin-block-end: 0.3em; }
 .page-lead { font-size: var(--step-1); color: var(--muted); max-inline-size: 40ch; }
 
-/* Quote band */
 .quote-band { background: var(--navy); color: var(--on-navy); padding-block: clamp(3rem, 2rem + 4vw, 5rem); --focus: var(--orange); }
 .quote-inner { display: grid; gap: 1.75rem; align-items: center; }
 .quote-band h2 { color: var(--on-navy); margin-block-end: 0.3em; }
 .quote-band p { color: var(--on-navy-muted); font-size: var(--step-1); max-inline-size: 44ch; }
 .quote-band a:not(.btn) { color: var(--on-navy); text-decoration-color: var(--orange); }
 
-/* Contact */
 .contact-grid { display: grid; gap: clamp(2rem, 1rem + 3vw, 4rem); align-items: start; }
 .channels { display: grid; gap: 0.75rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 21rem), 1fr)); }
 .channel {
@@ -309,7 +297,6 @@ main:focus { outline: none; }
 .visit h2 .icon { color: var(--orange); }
 .visit address { font-size: var(--step-1); line-height: 1.5; margin-block-end: 1.5rem; }
 
-/* Footer */
 .site-footer { background: var(--navy-ink); color: var(--on-navy-muted); padding-block: clamp(3rem, 2rem + 3vw, 4.5rem) 0; --focus: var(--orange); }
 .site-footer a { color: var(--on-navy); text-decoration-color: rgb(255 255 255 / 0.35); }
 .site-footer a:hover { text-decoration-color: var(--orange); }
@@ -326,14 +313,11 @@ main:focus { outline: none; }
 .footer-base p { box-sizing: border-box; max-inline-size: 76rem; margin-inline: auto; padding-inline: var(--gutter); }
 .site-footer > .footer-base { padding-inline: 0; }
 
-/* Error pages */
 .error-body { min-block-size: 100dvh; display: grid; place-items: center; background: var(--tint); }
 .error-page { padding: var(--gutter); max-inline-size: 36rem; text-align: center; }
 .error-page .actions { justify-content: center; margin-block-start: 2rem; }
 .error-code { font: 800 clamp(4rem, 2rem + 10vw, 8rem)/1 var(--font-display); color: var(--orange); margin: 0; letter-spacing: -0.04em; }
 
-
-/* Illustrative (stock) photos from the old site: always captioned as such */
 .illus { margin: 0; position: relative; }
 .illus img { inline-size: 100%; border-radius: var(--radius); }
 .illus figcaption {
@@ -346,12 +330,10 @@ main:focus { outline: none; }
 .illus-cutout { max-inline-size: 22rem; margin-inline: auto; }
 .illus-cutout img { border-radius: 0; }
 
-/* Why choose us: portrait beside the reasons */
 .why-grid { display: grid; gap: clamp(2rem, 1rem + 3vw, 4rem); }
 .why-side h2 { margin-block-end: 1.5rem; }
 .why-grid .reasons { grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr)); align-content: start; }
 
-/* Photo band */
 .photo-band { padding-block: 0 var(--space-section); }
 .photo-grid { display: grid; gap: clamp(0.5rem, 0.25rem + 1vw, 1rem); grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-flow: dense; }
 .photo-tile img { inline-size: 100%; block-size: 100%; aspect-ratio: 1; object-fit: cover; border-radius: var(--radius); }
@@ -361,7 +343,6 @@ main:focus { outline: none; }
 .photo-tile-round img { inline-size: 7rem; block-size: 7rem; border-radius: 50%; box-shadow: 0 0 0 4px var(--orange); }
 .photo-note { margin-block-start: 0.75rem; font-size: var(--step--1); color: var(--muted); }
 
-/* About: collage of the real training photo and two illustrative tiles */
 .collage { position: relative; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); align-items: end; max-inline-size: 34rem; justify-self: center; inline-size: 100%; }
 .collage-main { grid-column: 1 / 6; grid-row: 1; }
 .collage-main img { inline-size: 100%; border-radius: var(--radius); box-shadow: var(--shadow); }
@@ -371,7 +352,6 @@ main:focus { outline: none; }
 .collage-chip img { inline-size: 7rem; border-radius: var(--radius-sm); box-shadow: 0 0 0 4px var(--ground), var(--shadow); }
 .skills h2 { font-size: var(--step-2); }
 
-/* Footer badge (client's round logo) */
 .footer-badge img { inline-size: 4.5rem; block-size: 4.5rem; margin-block-end: 1rem; }
 
 @media (min-width: 46rem) {
@@ -384,7 +364,6 @@ main:focus { outline: none; }
   .why-grid .reasons { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
-/* ---------- Larger screens ---------- */
 @media (min-width: 46rem) {
   .hero-grid { grid-template-columns: 1.1fr 0.9fr; }
   .hero-figure { justify-self: end; inline-size: min(100%, 34rem); }
@@ -395,7 +374,6 @@ main:focus { outline: none; }
   .contact-grid { grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); }
 }
 
-/* ---------- Motion ---------- */
 @media (prefers-reduced-motion: no-preference) {
   @view-transition { navigation: auto; }
   ::view-transition-old(root) { animation: 0.18s ease-in both vt-fade-out; }
@@ -407,7 +385,7 @@ main:focus { outline: none; }
     @keyframes meter-in { from { clip-path: inset(0 100% 0 0 round 999px); } to { clip-path: inset(0 0 0 0 round 999px); } }
   }
 }
-/* Spatial movement only when the user has not asked for less motion; colour transitions stay. */
+
 @media (prefers-reduced-motion: no-preference) {
   .btn:hover, .channel:hover { translate: 0 -1px; }
   .btn:active { translate: 0 1px; }

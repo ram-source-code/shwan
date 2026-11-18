@@ -1,6 +1,4 @@
 <?php
-// Shared error page. Uses nothing from .env or a database, so it renders when those fail.
-/** @var int $code @var string $err_title @var string $err_text */
 global $nonce;
 $home = function_exists('url') && defined('BASE') ? url('/') : '/';
 $contact = function_exists('url') && defined('BASE') ? url('/contact') : '/contact';

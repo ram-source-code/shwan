@@ -1,4 +1,3 @@
-<?php /** @var array $site */ ?>
 <section class="quote-band" aria-labelledby="quote-title">
   <div class="wrap quote-inner">
     <div>

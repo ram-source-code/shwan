@@ -1,5 +1,4 @@
 <?php
-// sitemap.xml: <loc> + <lastmod> only. lastmod = last edit of the page file or the shared content file.
 header('Content-Type: application/xml; charset=UTF-8');
 header('Cache-Control: public, max-age=0, must-revalidate');
 $pages = ['/' => 'home', '/about' => 'about', '/team' => 'team', '/contact' => 'contact'];

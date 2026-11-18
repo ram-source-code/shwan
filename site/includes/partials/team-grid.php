@@ -1,8 +1,6 @@
 <?php
-/** @var array $site */
-/** $team_heading_level: 'h2' or 'h3' for member names */
 $hn = $team_heading_level ?? 'h3';
-$eager = !empty($team_lcp);   // true where the grid is the first content (the /team page)
+$eager = !empty($team_lcp);
 ?>
 <ul class="team-grid">
 <?php foreach ($site['team'] as $i => $m): ?>

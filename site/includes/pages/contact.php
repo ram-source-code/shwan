@@ -1,5 +1,4 @@
 <?php
-/** @var array $site */
 $local = iraq_mobile_local($site['phone']);
 ?>
 <section class="page-hero" aria-labelledby="page-title">

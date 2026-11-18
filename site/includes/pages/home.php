@@ -1,5 +1,4 @@
 <?php
-/** @var array $site */
 $r = $site['reasons'];
 ?>
 <section class="hero" aria-labelledby="hero-title">
