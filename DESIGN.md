@@ -6,7 +6,10 @@ colors:
   navy-deep: "#082c4a"
   navy-ink: "#0d2236"
   brand-orange: "#f7941e"
-  orange-light: "#ffb04f"
+  orange-ring: "#ffb04f"
+  orange-hover: "#ffa53d"
+  navy-bright: "#1b6aa8"
+  footer-base: "#081827"
   ground: "#ffffff"
   tint: "#f1f5f9"
   tint-2: "#e4ecf3"
@@ -86,7 +89,7 @@ A clean, confident software-company site played straight (the client chose the c
 - **Brand navy `#0c3f68`**: headings, primary buttons, current-page indicator, the full-bleed "Get a quote" band. White on navy is 11:1.
 
 ### Secondary
-- **Brand orange `#f7941e`**: accent only. Never text on white (2.2:1). Allowed: as a fill under navy text (4.9:1), as text on navy (4.9:1), for icons and decorative marks.
+- **Brand orange `#f7941e`**: accent only. Never text on white (2.2:1). Allowed: as a fill under navy text (4.9:1), as text on navy (4.9:1), for icons and the founder disc. The "+" on facts is navy.
 
 ### Neutral
 - `ground #fff`, `tint #f1f5f9` (alternating sections, page heading band), `tint-2 #e4ecf3` (meter tracks, photo backdrops), `line #d3dde7` (rules, card borders), `ink #142333` (body), `muted #4a5b6d` (secondary text, 7:1 on white), `navy-ink #0d2236` (footer ground).
@@ -113,7 +116,7 @@ Single centred column, max 76rem, fluid gutter. Mobile-first; two columns from 4
 
 ## Elevation & Depth
 
-One soft shadow (`0 1px 2px` + `0 8px 24px -8px` navy at low alpha) for floating things: the open menu, the founder caption chip, the skills panel, hovered contact channels. Everything else is flat with 1px `line` borders.
+One soft shadow (`0 1px 2px` + `0 8px 24px -8px` navy at low alpha) for floating things: the open menu, the founder caption chip, the skills panel, hovered contact channels. Everything else is flat. The sticky header separates with a soft downward shadow, not a rule.
 
 ## Shapes
 
@@ -125,13 +128,13 @@ One soft shadow (`0 1px 2px` + `0 8px 24px -8px` navy at low alpha) for floating
 Pill, min 48px tall (44px small). Primary navy/white; secondary white with navy 1.5px border; accent orange with navy-ink text (on navy grounds); ghost-inverse white outline (on navy). Hover lifts 1px, press sinks 1px. Icons 1.15em, left of the label.
 
 ### Navigation
-One `<nav>` list. Inline when the row fits (measured by script), otherwise a native `popover` panel anchored under a "Menu" pill. Current page: `aria-current` with a 2px navy underline (inline) or inset bar (panel). Phone number button is the last item.
+One `<nav>` list. Inline when the row fits (measured by script), otherwise a native `popover` panel anchored under a "Menu" pill. Current page: `aria-current`, shown as a filled navy pill with white text (inline and panel). Phone number button is the last item.
 
 ### Contact channel
 Full-row link with a 44px navy icon disc, small label above a large navy value. Used for phone, WhatsApp, email, Facebook.
 
 ### Reasons list
-A ruled list (top 1px line per item, orange line icon beside the h3), not cards.
+A plain grid separated by generous gaps, orange line icon beside each h3. No cards, no rules.
 
 ### Team member
 Portrait 370×480 at 12px radius with hairline frame, name (title style), role (muted). 2 columns on phones, 4 on desktop.
@@ -147,4 +150,5 @@ Portrait 370×480 at 12px radius with hairline frame, name (title style), role (
 - Don't add testimonials, client logos, portfolio items or counters the company hasn't supplied.
 - Don't use stock photos as if they were the team or office.
 - Don't put eyebrow/kicker labels above headings.
+- Don't use one-sided borders or stripes (top/bottom/side rules, inset bars). Separate with space, background tint, full borders or soft shadow.
 - Don't introduce gradients beyond the hero's subtle white-to-tint wash and the meter fill.

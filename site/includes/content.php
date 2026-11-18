@@ -1,9 +1,7 @@
 <?php
-// Site content, taken from the previous www.entersoftgroup.com homepage (Nov 2026).
-// Edit text here; the pages only lay it out.
 return [
     'name'      => 'Entersoftgroup',
-    'phone'     => '+9647701558796',            // E.164
+    'phone'     => '+9647701558796',
     'email'     => 'info@entersoftgroup.com',
     'facebook'  => 'https://www.facebook.com/entersoftgroup',
     'address'   => [
@@ -18,6 +16,7 @@ return [
     'hero' => [
         'title' => 'We create perfect brand goods value',
         'lead'  => 'Entersoftgroup helps businesses elevate their value.',
+        'intro' => 'Entersoftgroup is a software and IT company in Sulaymaniyah that helps businesses elevate their value.',
     ],
     'about' => 'Over the years, a wide range of developments and innovations in the global IT arena have led to many new IT-enabled devices and services being produced. Moreover, there is need for IT today, not just in urban areas but rural regions as well.',
     'facts' => [

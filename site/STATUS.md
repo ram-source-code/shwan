@@ -43,7 +43,7 @@ Forms, rate limit, honeypot, CSRF, sessions, login, uploads, payments, SQLite/My
 | ID | Requirement | Implementation | Test | Expected | Evidence | Status |
 |---|---|---|---|---|---|---|
 | D1-ssr | Server-rendered, works with JS off | PHP pages; JS only measures the nav | Playwright `javaScriptEnabled:false`: open the menu, click About | menu opens, navigates | `JS off: menu open=true`, `navigated to http://localhost/about` | ✅ |
-| D1-canon | One canonical origin, one 301 | `.htaccess` host/https rule, skipped on private IPs | `curl -I http://entersoftgroup.com/x` on the host | one 301 to https://www.entersoftgroup.com/x | localhost not redirected (200) ✅ | DEV |
+| D1-canon | One canonical origin, one 301 | `.htaccess` http→https on the same host; bootstrap.php sends a wrong host to CANONICAL_HOST (http + wrong host = 2 hops) | `curl -I http://entersoftgroup.com/x` on the host | one 301 to https://www.entersoftgroup.com/x | localhost not redirected (200) ✅ | DEV |
 | D1-urls | Clean URLs, one slash style | `index.php` | `/about/`, `//team` | 301 to the clean URL | `301 http://localhost/about`, `301 …/team` | ✅ |
 | D1-tz | UTF-8 + Asia/Baghdad | bootstrap | read the log timestamps | Baghdad time | `[18-Nov-2026 23:46:15 Asia/Baghdad]` | ✅ |
 | D1-php | PHP 8.4 on the host | hPanel | hPanel → PHP Configuration | 8.4 selected | — | DEV |
@@ -76,7 +76,7 @@ Forms, rate limit, honeypot, CSRF, sessions, login, uploads, payments, SQLite/My
 | D5-img | AVIF/WebP, width/height, LCP `fetchpriority=high`, lazy elsewhere | picture() | Lighthouse `lcp-lazy-loaded`; grep | pass | home: founder high, not lazy; team: first photo high | ✅ |
 | D5-fonts | Self-hosted WOFF2, swap, preload, `font-size-adjust` | layout.php | Network panel | 2 woff2 from self | 35 KB + 20 KB | ✅ |
 | D5-js | Defer, no long tasks | main.js 1.6 KB, defer | Lighthouse TBT | 0 ms | 0 ms | ✅ |
-| D5-weight | Page budget ≤ 1 MB | — | Lighthouse total bytes | ≤ 1 MB | 87–163 KiB | ✅ |
+| D5-weight | Page budget ≤ 1 MB | — | Lighthouse total bytes | ≤ 1 MB | home 191 KiB, about 185 KiB after adding the stock images (perf 100, LCP 1.8 s / 1.6 s) | ✅ |
 | D5-spec | Speculation Rules | layout.php | view source | present, nonced | present | ✅ |
 | D5-critical | Critical CSS inlined | the whole CSS (19 KB, ~4.5 KB gzip) is inlined with a nonce | view source | — | ✅ | ✅ |
 | D6 | Modern CSS, progressive, reduced motion | `@supports` for scroll-driven meters; `@view-transition` inside reduced-motion `no-preference`; anchor() with a fallback | reduced-motion screenshots | no overflow | 0 overflow at 320/360/768/1280/1440 | ✅ |
@@ -91,8 +91,8 @@ Forms, rate limit, honeypot, CSRF, sessions, login, uploads, payments, SQLite/My
 | D7a | Kurdish, bilingual | — | — | — | English only (confirmed) | N/A |
 | D7a-phone | Phone display / tel / wa.me | `iraq_mobile_local()`, `tel:+9647701558796`, `wa.me/9647701558796`, `<span dir=ltr>` | view source | — | ✅ | ✅ |
 | D8-meta | Unique title, description, canonical, h1 | page meta arrays | curl 4 pages | unique | 4 different titles and descriptions; Lighthouse SEO 100 ×4 | ✅ |
-| D8-sitemap | sitemap.xml with loc + lastmod | static file | curl | 200 | 4 URLs, lastmod 2026-11-18 | ✅ |
-| D8-robots | robots.txt with Sitemap, no secrets | static | curl | — | `Sitemap: https://www.entersoftgroup.com/sitemap.xml` | ✅ |
+| D8-sitemap | sitemap.xml with loc + lastmod | `/sitemap.xml` route (`pages/sitemap.php`), from abs_url + file mtimes | curl | 200 | 4 URLs, lastmod 2026-11-18 | ✅ |
+| D8-robots | robots.txt with Sitemap, no secrets | `/robots.txt` route | curl | — | `Sitemap: https://www.entersoftgroup.com/sitemap.xml` | ✅ |
 | D8-jsonld | LocalBusiness JSON-LD | layout.php | parsed JSON | valid | name, url, logo, telephone (E.164), email, address, sameAs; **no openingHours: not supplied** | ✅ |
 | D8-icons | Favicon set + theme-color | root files | curl | 200 | ico 16/32/48, icon.svg, 180 px apple-touch | ✅ |
 | D8-301 | Old URLs → one 301 / 410 | `includes/redirects.php` | curl `/about.html`, `/faq.html` | 301 / 410 | `301 …/about`; `410` | ✅ |
@@ -100,7 +100,7 @@ Forms, rate limit, honeypot, CSRF, sessions, login, uploads, payments, SQLite/My
 | D8a-tags | OG tags, absolute, non-empty | og_tags() | view source | present | og:title/description/url/image(+w/h/alt/type)/locale, twitter:card | ✅ |
 | D8a-img | og-default.jpg 1200×630 < 300 KB | Pillow | `curl -I` | 200 jpeg | 200, image/jpeg, 39 312 B, CORP cross-origin | ✅ |
 | D8a-preview | WhatsApp / Facebook / LinkedIn / Telegram / X previews | — | share each URL after launch | large card | — | DEV |
-| D9 | PWA level 0 | favicon + theme-color | — | — | pwa_level 0 | ✅ |
+| D9 | PWA level 1 (installable; added for the SEO checker) | `manifest.webmanifest`, relative URLs, 192/512/maskable icons | curl | 200 application/manifest+json | ✅ | ✅ |
 | D10-backup | Backup/restore documented | README | — | — | no DB: files only | ✅ |
 | D10-monitor | Uptime, SSL and domain alerts | — | — | — | — | DEV |
 | D10-readme | README sections | README.md | — | — | file map, content, deploy, backup, DNS, libraries, maintenance, never-upload, ownership | ✅ |
@@ -125,6 +125,8 @@ Forms, rate limit, honeypot, CSRF, sessions, login, uploads, payments, SQLite/My
 - **Known validator noise:** the Nu checker's CSS parser does not know `view-transition-name`, `@starting-style`, `@view-transition`, `transition-behavior` or `animation-timeline`. These are valid, Baseline or `@supports`-gated CSS. There are 0 HTML errors.
 
 ### [CLIENT] items left
+
+0. Licence for the theme's stock photos, now used as captioned illustrative images at the user's request: confirm with AndroThemes or the original stock source, or replace them with Entersoftgroup's own photos.
 
 1. Confirm the team photos, founder cut-out and training-room photo may be used, including consent from the people in the training photo.
 2. Confirm WhatsApp is active on 0770 155 8796.

@@ -1,4 +1,3 @@
-<?php /** @var array $site */ ?>
 <section class="page-hero" aria-labelledby="page-title">
   <div class="wrap">
     <h1 id="page-title">About us</h1>
@@ -17,9 +16,11 @@
 <?php endforeach; ?>
       </dl>
     </div>
-    <figure class="tour">
-      <?= picture('training-room', [400], 400, 440, 'A training session in a classroom: the presenter points at software projected in Kurdish on the screen', '(min-width: 64rem) 25rem, 90vw', false, 'tour-photo') ?>
-    </figure>
+    <div class="collage">
+      <?= picture('training-room', [400], 400, 440, 'A training session in a classroom: the presenter points at software projected in Kurdish on the screen', '(min-width: 64rem) 25rem, 80vw', false, 'collage-main') ?>
+      <?= illus('laptop-pair', [400], 400, 257, 'Two colleagues looking at a laptop together', '(min-width: 64rem) 16rem, 55vw', 'collage-side') ?>
+      <?= picture('portrait-small', [162], 162, 104, '', '10rem', false, 'collage-chip') ?>
+    </div>
   </div>
 </section>
 
@@ -27,13 +28,19 @@
   <div class="wrap split split-center">
     <div class="prose">
       <h2 id="tour-title"><?= e($site['tour']['title']) ?></h2>
-      <p><?= e($site['tour']['text']) ?></p>
       <p>Our office is at <?= e($site['address']['building']) ?>, <?= e($site['address']['street']) ?>, <?= e($site['address']['city']) ?>.</p>
       <p><a class="link-arrow" href="<?= e(url('/contact')) ?>">How to find us<?= icon('arrow-right') ?></a></p>
     </div>
+    <?= illus('office-desk-bw', [640, 960], 960, 494, 'Black-and-white photo of a man working on a laptop while a colleague looks on', '(min-width: 46rem) 36rem, 92vw', 'illus-wide') ?>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="skills-title">
+  <div class="wrap split split-center">
+    <?= illus('notes-desk', [570], 570, 560, 'A woman in glasses writing notes at a desk', '(min-width: 46rem) 30rem, 92vw') ?>
     <div class="skills">
-      <h3 id="skills-title">Skillset</h3>
-      <ul role="list">
+      <h2 id="skills-title">Skillset</h2>
+      <ul>
 <?php foreach ($site['skills'] as $i => $s): ?>
         <li class="skill">
           <span class="skill-label" id="skill-<?= $i ?>"><?= e($s['label']) ?></span>
@@ -44,22 +51,6 @@
       </ul>
       <p><a class="btn btn-primary" href="<?= e(url('/contact')) ?>">Hire us now</a></p>
     </div>
-  </div>
-</section>
-
-<section class="section" aria-labelledby="why-title">
-  <div class="wrap">
-    <div class="section-head">
-      <h2 id="why-title">Why choose us</h2>
-    </div>
-    <ul class="reasons" role="list">
-<?php foreach ($site['reasons'] as $item): ?>
-      <li class="reason">
-        <h3><?= icon($item['icon']) ?><?= e($item['title']) ?></h3>
-        <p><?= e($item['text']) ?></p>
-      </li>
-<?php endforeach; ?>
-    </ul>
   </div>
 </section>
 

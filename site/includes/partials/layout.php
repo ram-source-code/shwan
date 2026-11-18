@@ -1,13 +1,8 @@
 <?php
-/** @var array $meta  title, description, path, [h1 handled by page] */
-/** @var array $site */
-/** @var string $content */
-/** @var string $nonce */
 $nav = ['/' => 'Home', '/about' => 'About', '/team' => 'Team', '/contact' => 'Contact'];
 $title = $meta['path'] === '/' ? $meta['title'] : $meta['title'] . ' | ' . SITE_NAME;
 $tel = 'tel:' . $site['phone'];
-$ld = [
-    '@context' => 'https://schema.org',
+$biz = [
     '@type' => 'LocalBusiness',
     '@id' => abs_url('/') . '#business',
     'name' => $site['name'],
@@ -25,19 +20,30 @@ $ld = [
     ],
     'sameAs' => [$site['facebook']],
 ];
+$ld = ['@context' => 'https://schema.org', '@graph' => [
+    ['@type' => 'WebSite', '@id' => abs_url('/') . '#website', 'name' => SITE_NAME, 'url' => abs_url('/'), 'inLanguage' => 'en',
+     'publisher' => ['@id' => abs_url('/') . '#business']],
+    ['@type' => 'WebPage', '@id' => abs_url($meta['path']) . '#webpage', 'url' => abs_url($meta['path']), 'name' => $title,
+     'description' => $meta['description'], 'inLanguage' => 'en', 'isPartOf' => ['@id' => abs_url('/') . '#website'],
+     'about' => ['@id' => abs_url('/') . '#business'], 'primaryImageOfPage' => abs_url('/og-default.jpg')],
+    $biz,
+]];
 ?><!doctype html>
 <html lang="en" dir="ltr" data-base="<?= e(BASE) ?>">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="text-scale" content="scale">
 <title><?= e($title) ?></title>
 <meta name="description" content="<?= e($meta['description']) ?>">
 <link rel="canonical" href="<?= e(abs_url($meta['path'])) ?>">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#0c3f68">
-<link rel="icon" href="<?= e(url('/favicon.ico')) ?>" sizes="48x48">
+<link rel="icon" href="<?= e(url('/favicon.ico')) ?>" sizes="any">
+<link rel="icon" href="<?= e(url('/favicon-32x32.png')) ?>" type="image/png" sizes="32x32">
 <link rel="icon" href="<?= e(url('/icon.svg')) ?>" type="image/svg+xml">
-<link rel="apple-touch-icon" href="<?= e(url('/apple-touch-icon.png')) ?>">
+<link rel="apple-touch-icon" href="<?= e(url('/apple-touch-icon.png')) ?>" sizes="180x180">
+<link rel="manifest" href="<?= e(url('/manifest.webmanifest')) ?>">
 <link rel="preload" href="<?= e(asset('assets/fonts/archivo.woff2')) ?>" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="<?= e(asset('assets/fonts/figtree.woff2')) ?>" as="font" type="font/woff2" crossorigin>
 <?= og_tags($meta) ?>
@@ -74,7 +80,7 @@ $ld = [
 <?php foreach ($nav as $href => $label): ?>
         <li><a href="<?= e(url($href)) ?>"<?= $meta['path'] === $href ? ' aria-current="page"' : '' ?>><?= e($label) ?></a></li>
 <?php endforeach; ?>
-        <li class="menu-call"><a class="btn btn-primary btn-sm" href="<?= e($tel) ?>"><?= icon('phone') ?><span dir="ltr"><?= e(iraq_mobile_local($site['phone'])) ?></span></a></li>
+        <li class="menu-call"><a class="btn btn-primary btn-sm" href="<?= e($tel) ?>"><?= icon('phone') ?><span class="visually-hidden">Call </span><span dir="ltr"><?= e(iraq_mobile_local($site['phone'])) ?></span></a></li>
       </ul>
     </nav>
   </div>
@@ -85,6 +91,10 @@ $ld = [
 <footer class="site-footer">
   <div class="wrap footer-grid">
     <div class="footer-brand">
+      <picture class="footer-badge">
+        <source type="image/avif" srcset="<?= e(asset('assets/img/logo-badge-96.avif')) ?> 1x, <?= e(asset('assets/img/logo-badge-192.avif')) ?> 2x">
+        <img src="<?= e(asset('assets/img/logo-badge-96.webp')) ?>" srcset="<?= e(asset('assets/img/logo-badge-192.webp')) ?> 2x" width="96" height="96" alt="" loading="lazy" decoding="async">
+      </picture>
       <p class="footer-name"><?= e($site['name']) ?></p>
       <p><?= e($site['hero']['lead']) ?></p>
     </div>
@@ -100,7 +110,7 @@ $ld = [
     <div>
       <h2 class="footer-h">Contact</h2>
       <ul class="footer-list">
-        <li><a href="<?= e($tel) ?>"><?= icon('phone') ?><span dir="ltr"><?= e(iraq_mobile_local($site['phone'])) ?></span></a></li>
+        <li><a href="<?= e($tel) ?>"><?= icon('phone') ?><span class="visually-hidden">Call </span><span dir="ltr"><?= e(iraq_mobile_local($site['phone'])) ?></span></a></li>
         <li><a href="https://wa.me/<?= e(substr($site['phone'], 1)) ?>" target="_blank" rel="noopener noreferrer"><?= icon('chat') ?>WhatsApp<span class="visually-hidden"> (opens in a new tab)</span></a></li>
         <li><a href="mailto:<?= e($site['email']) ?>"><?= icon('mail') ?><?= e($site['email']) ?></a></li>
         <li><a href="<?= e($site['facebook']) ?>" target="_blank" rel="noopener noreferrer"><?= icon('facebook') ?>Facebook<span class="visually-hidden"> (opens in a new tab)</span></a></li>

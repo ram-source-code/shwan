@@ -1,6 +1,4 @@
 <?php
-// Old site URLs (theme pages on www.entersoftgroup.com before the rebuild).
-// A string = one 301 to that path. null = 410 Gone: the old page held only theme demo content.
 return [
     '/index.html'              => '/',
     '/index-2.html'            => '/',

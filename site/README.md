@@ -9,7 +9,7 @@ site/                       upload the CONTENTS of this folder to public_html/
   index.php                 front controller (the only PHP file the web can reach)
   .htaccess                 rewrites, blocks, security + cache headers, canonical 301
   .env / .env.example       per-environment settings (.env is not in git: create it, see below)
-  robots.txt sitemap.xml    static (no DB); update sitemap <lastmod> when a page's content changes
+  manifest.webmanifest      install metadata (relative URLs, works in any folder)
   favicon.ico icon.svg apple-touch-icon.png og-default.jpg
   assets/                   css/main.css (inlined into each page), js/main.js, img/, fonts/ (cached 1 year)
   includes/                 blocked from the web
@@ -75,7 +75,7 @@ There is no database. The site is its files, so the deploy zip is the backup. Re
 | DMARC (TXT `_dmarc`) | `v=DMARC1; p=quarantine; rua=mailto:info@entersoftgroup.com` |
 | CAA (optional) | `0 issue "letsencrypt.org"` (include the host's CA, or SSL renewal breaks) |
 
-Canonical host is `www.entersoftgroup.com`. `.htaccess` sends http and the bare domain to it with one 301. To change the canonical host, edit `CANONICAL_HOST` in `.env [production]`, and also edit the host in `.htaccess`, `robots.txt` and `sitemap.xml`.
+The canonical host is `CANONICAL_HOST` in `.env [production]`, currently `www.entersoftgroup.com`. `.htaccess` upgrades http to https on the same host. `bootstrap.php` then sends any other host to `https://CANONICAL_HOST` with a 301. `robots.txt` and `sitemap.xml` are generated routes, so canonical, og:url, sitemap and robots all follow `.env`. That makes a test copy on another domain just a different `.env`, for example `CANONICAL_HOST = "ramyar-salah.freedev.app"` with the folder uploaded to `public_html/entersoft/`.
 
 ## Libraries / supply chain
 

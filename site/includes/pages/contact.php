@@ -1,5 +1,4 @@
 <?php
-/** @var array $site */
 $local = iraq_mobile_local($site['phone']);
 ?>
 <section class="page-hero" aria-labelledby="page-title">
@@ -11,11 +10,11 @@ $local = iraq_mobile_local($site['phone']);
 
 <section class="section" aria-label="Ways to reach us">
   <div class="wrap contact-grid">
-    <ul class="channels" role="list">
+    <ul class="channels">
       <li>
         <a class="channel" href="tel:<?= e($site['phone']) ?>">
           <?= icon('phone') ?>
-          <span class="channel-text"><span class="channel-name">Phone</span><span class="channel-value" dir="ltr"><?= e($local) ?></span></span>
+          <span class="channel-text"><span class="channel-name">Call</span><span class="channel-value" dir="ltr"><?= e($local) ?></span></span>
         </a>
       </li>
       <li>

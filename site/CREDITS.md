@@ -14,7 +14,9 @@
 | Archivo font | Omnibus-Type, via Fontsource 5.3.0 | — | OFL-1.1 |
 | Figtree font | Erik Kennedy, via Fontsource 5.3.0 | — | OFL-1.1 |
 | All text | Client copy from the old homepage; minor grammar and typo fixes ("help" → "helps", "travelshooting" → "troubleshooting", "Entrsoftgroup" → "Entersoftgroup") | — | Client-owned |
+| `work-desk`, `office-desk-bw`, `laptop-pair`, `portrait-small`, `feature-portrait`, `notes-desk`, `gallery-1…8`, `portrait-round` | Old site theme images (`banner/01`, `video-bg`, `tile-gallery/02-03`, `feature-img`, `skill-img`, `portfolio/01-05`, `laest-post/01-03`, `test-author`), added at the client's request | re-encoded WebP/AVIF | **Stock that came with the AndroThemes theme. [CLIENT: confirm the licence allows use outside the theme demo.]** Shown captioned "Illustrative photo" / "Illustrative stock photography", never as the team, office or portfolio. |
+| `logo-badge-*` | Old site `tile-gallery/icon.png` (round logo badge) | resized | Client-owned |
 
-Not reused from the old site: the theme's stock photos (banner, video background, feature and skill images, portfolio, blog). They were theme demo assets, not Entersoftgroup's material. The theme's fake testimonials, lorem ipsum and demo team/contact details were not reused either.
+Every image the old homepage used is now on the site. The only ones left out are the identical duplicate logo files (`logo-white.png`, `icon-2.png`) and the theme's unused 16 px favicon.
 
 No generated (AI) images.

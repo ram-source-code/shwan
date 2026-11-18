@@ -1,6 +1,4 @@
 <?php
-/** @var array $site */
-/** Optional: $actions_class (extra class), $actions_inverse (bool, on navy ground) */
 $cls = 'actions' . (!empty($actions_class) ? ' ' . $actions_class : '');
 $inv = !empty($actions_inverse);
 ?>
