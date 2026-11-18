@@ -30,7 +30,10 @@ $site = require ROOT . '/includes/content.php';
 ob_start();
 $meta = require ROOT . "/includes/pages/$page.php";                           // echoes its <main> content, returns meta
 $content = ob_get_clean();
-header('Content-Type: text/html; charset=UTF-8');
-header('Cache-Control: no-cache');
-if (is_array($meta)) require ROOT . '/includes/partials/layout.php';
-else echo $content;
+if (is_array($meta)) {
+    header('Content-Type: text/html; charset=UTF-8');
+    header('Cache-Control: no-cache');
+    require ROOT . '/includes/partials/layout.php';
+} else {
+    echo $content;                                                            // the page set its own headers (XML, text)
+}

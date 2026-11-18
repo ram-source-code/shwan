@@ -50,6 +50,13 @@ set_error_handler(function (int $no, string $msg, string $file, int $line): bool
 define('ENV', load_env(ROOT . '/.env'));             // 'local' | 'production', plus one constant per .env key
 if (ENV === 'local') header("Content-Security-Policy: $csp");   // local is plain http: nothing to upgrade
 
+// Wrong host (bare domain, old alias, staging copy pointed elsewhere) -> one 301 to CANONICAL_HOST from .env.
+// Compared, never echoed: the Location uses the configured host only.
+if (ENV !== 'local' && strcasecmp((string)($_SERVER['HTTP_HOST'] ?? ''), CANONICAL_HOST) !== 0) {
+    header('Location: https://' . CANONICAL_HOST . ($_SERVER['REQUEST_URI'] ?? '/'), true, 301);
+    exit;
+}
+
 // Maintenance: create/delete data/maintenance.flag; developer bypass cookie "maint" = MAINT_KEY
 if (is_file(ROOT . '/data/maintenance.flag') && !hash_equals(MAINT_KEY, (string)($_COOKIE['maint'] ?? ''))) {
     error_page(503, ['Retry-After: 900']);

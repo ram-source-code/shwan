@@ -6,8 +6,7 @@
 $nav = ['/' => 'Home', '/about' => 'About', '/team' => 'Team', '/contact' => 'Contact'];
 $title = $meta['path'] === '/' ? $meta['title'] : $meta['title'] . ' | ' . SITE_NAME;
 $tel = 'tel:' . $site['phone'];
-$ld = [
-    '@context' => 'https://schema.org',
+$biz = [
     '@type' => 'LocalBusiness',
     '@id' => abs_url('/') . '#business',
     'name' => $site['name'],
@@ -25,6 +24,14 @@ $ld = [
     ],
     'sameAs' => [$site['facebook']],
 ];
+$ld = ['@context' => 'https://schema.org', '@graph' => [
+    ['@type' => 'WebSite', '@id' => abs_url('/') . '#website', 'name' => SITE_NAME, 'url' => abs_url('/'), 'inLanguage' => 'en',
+     'publisher' => ['@id' => abs_url('/') . '#business']],
+    ['@type' => 'WebPage', '@id' => abs_url($meta['path']) . '#webpage', 'url' => abs_url($meta['path']), 'name' => $title,
+     'description' => $meta['description'], 'inLanguage' => 'en', 'isPartOf' => ['@id' => abs_url('/') . '#website'],
+     'about' => ['@id' => abs_url('/') . '#business'], 'primaryImageOfPage' => abs_url('/og-default.jpg')],
+    $biz,
+]];
 ?><!doctype html>
 <html lang="en" dir="ltr" data-base="<?= e(BASE) ?>">
 <head>
@@ -36,9 +43,11 @@ $ld = [
 <link rel="canonical" href="<?= e(abs_url($meta['path'])) ?>">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#0c3f68">
-<link rel="icon" href="<?= e(url('/favicon.ico')) ?>" sizes="48x48">
+<link rel="icon" href="<?= e(url('/favicon.ico')) ?>" sizes="any">
+<link rel="icon" href="<?= e(url('/favicon-32x32.png')) ?>" type="image/png" sizes="32x32">
 <link rel="icon" href="<?= e(url('/icon.svg')) ?>" type="image/svg+xml">
-<link rel="apple-touch-icon" href="<?= e(url('/apple-touch-icon.png')) ?>">
+<link rel="apple-touch-icon" href="<?= e(url('/apple-touch-icon.png')) ?>" sizes="180x180">
+<link rel="manifest" href="<?= e(url('/manifest.webmanifest')) ?>">
 <link rel="preload" href="<?= e(asset('assets/fonts/archivo.woff2')) ?>" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="<?= e(asset('assets/fonts/figtree.woff2')) ?>" as="font" type="font/woff2" crossorigin>
 <?= og_tags($meta) ?>

@@ -117,7 +117,10 @@ function og_tags(array $p): string {
     ];
     $o = '';
     foreach ($t as $k => $v) $o .= '<meta property="' . $k . '" content="' . e((string)$v) . "\">\n";
-    return $o . "<meta name=\"twitter:card\" content=\"summary_large_image\">\n";
+    $tw = ['twitter:card' => 'summary_large_image', 'twitter:title' => $t['og:title'], 'twitter:description' => $t['og:description'],
+           'twitter:image' => $t['og:image'], 'twitter:image:alt' => $t['og:image:alt']];
+    foreach ($tw as $k => $v) $o .= '<meta name="' . $k . '" content="' . e((string)$v) . "\">\n";
+    return $o;   // no twitter:site: Entersoftgroup has no X account
 }
 
 /** JSON for a <script> block (safe against </script> injection). */
