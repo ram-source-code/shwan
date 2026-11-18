@@ -46,6 +46,12 @@ function picture(string $name, array $widths, int $w, int $h, string $alt, strin
         . '</picture>';
 }
 
+/** Stock/illustrative photo from the old site, labelled so it is never mistaken for the real team or office. */
+function illus(string $name, array $widths, int $w, int $h, string $alt, string $sizes, string $class = ''): string {
+    return '<figure class="illus' . ($class ? ' ' . e($class) : '') . '">' . picture($name, $widths, $w, $h, $alt, $sizes)
+        . '<figcaption>Illustrative photo</figcaption></figure>';
+}
+
 /** +9647701234567 → 0770 123 4567 */
 function iraq_mobile_local(string $e164): string {
     $n = '0' . substr($e164, 4);

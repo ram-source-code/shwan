@@ -76,7 +76,7 @@ Forms, rate limit, honeypot, CSRF, sessions, login, uploads, payments, SQLite/My
 | D5-img | AVIF/WebP, width/height, LCP `fetchpriority=high`, lazy elsewhere | picture() | Lighthouse `lcp-lazy-loaded`; grep | pass | home: founder high, not lazy; team: first photo high | ✅ |
 | D5-fonts | Self-hosted WOFF2, swap, preload, `font-size-adjust` | layout.php | Network panel | 2 woff2 from self | 35 KB + 20 KB | ✅ |
 | D5-js | Defer, no long tasks | main.js 1.6 KB, defer | Lighthouse TBT | 0 ms | 0 ms | ✅ |
-| D5-weight | Page budget ≤ 1 MB | — | Lighthouse total bytes | ≤ 1 MB | 87–163 KiB | ✅ |
+| D5-weight | Page budget ≤ 1 MB | — | Lighthouse total bytes | ≤ 1 MB | home 191 KiB, about 185 KiB after adding the stock images (perf 100, LCP 1.8 s / 1.6 s) | ✅ |
 | D5-spec | Speculation Rules | layout.php | view source | present, nonced | present | ✅ |
 | D5-critical | Critical CSS inlined | the whole CSS (19 KB, ~4.5 KB gzip) is inlined with a nonce | view source | — | ✅ | ✅ |
 | D6 | Modern CSS, progressive, reduced motion | `@supports` for scroll-driven meters; `@view-transition` inside reduced-motion `no-preference`; anchor() with a fallback | reduced-motion screenshots | no overflow | 0 overflow at 320/360/768/1280/1440 | ✅ |
@@ -125,6 +125,8 @@ Forms, rate limit, honeypot, CSRF, sessions, login, uploads, payments, SQLite/My
 - **Known validator noise:** the Nu checker's CSS parser does not know `view-transition-name`, `@starting-style`, `@view-transition`, `transition-behavior` or `animation-timeline`. These are valid, Baseline or `@supports`-gated CSS. There are 0 HTML errors.
 
 ### [CLIENT] items left
+
+0. Licence for the theme's stock photos, now used as captioned illustrative images at the user's request: confirm with AndroThemes or the original stock source, or replace them with Entersoftgroup's own photos.
 
 1. Confirm the team photos, founder cut-out and training-room photo may be used, including consent from the people in the training photo.
 2. Confirm WhatsApp is active on 0770 155 8796.

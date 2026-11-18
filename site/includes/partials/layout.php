@@ -86,6 +86,10 @@ $ld = [
 <footer class="site-footer">
   <div class="wrap footer-grid">
     <div class="footer-brand">
+      <picture class="footer-badge">
+        <source type="image/avif" srcset="<?= e(asset('assets/img/logo-badge-96.avif')) ?> 1x, <?= e(asset('assets/img/logo-badge-192.avif')) ?> 2x">
+        <img src="<?= e(asset('assets/img/logo-badge-96.webp')) ?>" srcset="<?= e(asset('assets/img/logo-badge-192.webp')) ?> 2x" width="96" height="96" alt="" loading="lazy" decoding="async">
+      </picture>
       <p class="footer-name"><?= e($site['name']) ?></p>
       <p><?= e($site['hero']['lead']) ?></p>
     </div>

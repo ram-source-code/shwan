@@ -258,8 +258,6 @@ main:focus { outline: none; }
 .member-lead .member-role { color: var(--navy); }
 
 /* About: training photo & skills */
-.tour { margin: 0; max-inline-size: 25rem; justify-self: center; }
-.tour-photo img { border-radius: var(--radius); box-shadow: var(--shadow); inline-size: 100%; }
 .facts-inline { margin-block-start: 2.5rem; }
 .split-center { align-items: center; }
 .skills { background: var(--ground); border-radius: var(--radius); padding: clamp(1.5rem, 1rem + 2vw, 2.5rem); box-shadow: var(--shadow); }
@@ -333,6 +331,58 @@ main:focus { outline: none; }
 .error-page { padding: var(--gutter); max-inline-size: 36rem; text-align: center; }
 .error-page .actions { justify-content: center; margin-block-start: 2rem; }
 .error-code { font: 800 clamp(4rem, 2rem + 10vw, 8rem)/1 var(--font-display); color: var(--orange); margin: 0; letter-spacing: -0.04em; }
+
+
+/* Illustrative (stock) photos from the old site: always captioned as such */
+.illus { margin: 0; position: relative; }
+.illus img { inline-size: 100%; border-radius: var(--radius); }
+.illus figcaption {
+  position: absolute; inset-inline-end: 0.75rem; inset-block-end: 0.75rem;
+  padding: 0.2rem 0.6rem; border-radius: 999px;
+  background: rgb(13 34 54 / 0.72); color: var(--on-navy);
+  font-size: 0.75rem; font-weight: 600; line-height: 1.4;
+}
+.illus-wide img { aspect-ratio: 16 / 9; object-fit: cover; box-shadow: var(--shadow); }
+.illus-cutout { max-inline-size: 22rem; margin-inline: auto; }
+.illus-cutout img { border-radius: 0; }
+
+/* Why choose us: portrait beside the reasons */
+.why-grid { display: grid; gap: clamp(2rem, 1rem + 3vw, 4rem); }
+.why-side h2 { margin-block-end: 1.5rem; }
+.why-grid .reasons { grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr)); align-content: start; }
+
+/* Photo band */
+.photo-band { padding-block: 0 var(--space-section); }
+.photo-grid { display: grid; gap: clamp(0.5rem, 0.25rem + 1vw, 1rem); grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-flow: dense; }
+.photo-tile img { inline-size: 100%; block-size: 100%; aspect-ratio: 1; object-fit: cover; border-radius: var(--radius); }
+.photo-tile-5 { grid-column: span 2; grid-row: span 2; }
+.photo-tile-5 img { aspect-ratio: auto; }
+.photo-tile-round { justify-self: center; align-self: center; }
+.photo-tile-round img { inline-size: 7rem; block-size: 7rem; border-radius: 50%; box-shadow: 0 0 0 4px var(--orange); }
+.photo-note { margin-block-start: 0.75rem; font-size: var(--step--1); color: var(--muted); }
+
+/* About: collage of the real training photo and two illustrative tiles */
+.collage { position: relative; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); align-items: end; max-inline-size: 34rem; justify-self: center; inline-size: 100%; }
+.collage-main { grid-column: 1 / 6; grid-row: 1; }
+.collage-main img { inline-size: 100%; border-radius: var(--radius); box-shadow: var(--shadow); }
+.collage-side { grid-column: 3 / 7; grid-row: 1; margin-block-end: -2.5rem; }
+.collage-side img { box-shadow: 0 0 0 6px var(--ground), var(--shadow); }
+.collage-chip { position: absolute; inset-block-start: -1rem; inset-inline-end: 0; }
+.collage-chip img { inline-size: 7rem; border-radius: var(--radius-sm); box-shadow: 0 0 0 4px var(--ground), var(--shadow); }
+.skills h2 { font-size: var(--step-2); }
+
+/* Footer badge (client's round logo) */
+.footer-badge img { inline-size: 4.5rem; block-size: 4.5rem; margin-block-end: 1rem; }
+
+@media (min-width: 46rem) {
+  .photo-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .collage-side { margin-block-end: -3rem; }
+}
+@media (min-width: 64rem) {
+  .why-grid { grid-template-columns: minmax(0, 0.8fr) minmax(0, 2fr); align-items: start; }
+  .why-side { position: sticky; inset-block-start: 6rem; }
+  .why-grid .reasons { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
 
 /* ---------- Larger screens ---------- */
 @media (min-width: 46rem) {

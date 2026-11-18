@@ -22,19 +22,22 @@ $r = $site['reasons'];
 </section>
 
 <section class="section about-intro" aria-labelledby="about-title">
-  <div class="wrap split">
-    <h2 id="about-title">About us</h2>
+  <div class="wrap split split-center">
     <div class="prose">
+      <h2 id="about-title">About us</h2>
       <p><?= e($site['about']) ?></p>
       <p><a class="link-arrow" href="<?= e(url('/about')) ?>">More about us<?= icon('arrow-right') ?></a></p>
     </div>
+    <?= illus('work-desk', [800, 1200], 1200, 625, 'A man at a desk waving at a video call on his computer', '(min-width: 46rem) 36rem, 92vw', 'illus-wide') ?>
   </div>
 </section>
 
 <section class="section section-tint" aria-labelledby="why-title">
   <div class="wrap">
-    <div class="section-head">
+    <div class="why-grid">
+    <div class="why-side">
       <h2 id="why-title">Why choose us</h2>
+      <?= illus('feature-portrait', [569], 569, 698, 'A smiling man in a black T-shirt in front of an orange circle', '(min-width: 64rem) 22rem, (min-width: 46rem) 30vw, 70vw', 'illus-cutout') ?>
     </div>
     <ul class="reasons">
 <?php foreach ($r as $item): ?>
@@ -44,6 +47,7 @@ $r = $site['reasons'];
       </li>
 <?php endforeach; ?>
     </ul>
+    </div>
   </div>
 </section>
 
@@ -56,6 +60,16 @@ $r = $site['reasons'];
 <?php require ROOT . '/includes/partials/team-grid.php'; ?>
   </div>
 </section>
+
+<div class="photo-band wrap">
+  <div class="photo-grid">
+<?php foreach ([1, 2, 5, 3, 4, 6, 7, 8] as $g): ?>
+    <?= picture("gallery-$g", [$g === 5 ? 770 : 370], $g === 5 ? 770 : 370, $g === 5 ? 370 : ($g > 5 ? 235 : 370), '', ($g === 5 ? '(min-width: 46rem) 50vw, 100vw' : '(min-width: 46rem) 25vw, 50vw'), false, 'photo-tile photo-tile-' . $g) ?>
+<?php endforeach; ?>
+    <?= picture('portrait-round', [140], 140, 140, '', '7rem', false, 'photo-tile photo-tile-round') ?>
+  </div>
+  <p class="photo-note">Illustrative stock photography.</p>
+</div>
 
 <?php require ROOT . '/includes/partials/quote-band.php'; ?>
 <?php
