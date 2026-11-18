@@ -1,0 +1,72 @@
+<?php /** @var array $site */ ?>
+<section class="page-hero" aria-labelledby="page-title">
+  <div class="wrap">
+    <h1 id="page-title">About us</h1>
+    <p class="page-lead"><?= e($site['hero']['lead']) ?></p>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="story-title">
+  <div class="wrap split">
+    <div class="prose">
+      <h2 id="story-title" class="visually-hidden">Our story</h2>
+      <p class="prose-lg"><?= e($site['about']) ?></p>
+      <dl class="facts facts-inline">
+<?php foreach ($site['facts'] as $f): ?>
+        <div class="fact"><dt><?= e($f['label']) ?></dt><dd><?= e($f['value']) ?><span><?= e($f['suffix']) ?></span></dd></div>
+<?php endforeach; ?>
+      </dl>
+    </div>
+    <figure class="tour">
+      <?= picture('training-room', [400], 400, 440, 'A training session in a classroom: the presenter points at software projected in Kurdish on the screen', '(min-width: 64rem) 25rem, 90vw', false, 'tour-photo') ?>
+    </figure>
+  </div>
+</section>
+
+<section class="section section-tint" aria-labelledby="tour-title">
+  <div class="wrap split split-center">
+    <div class="prose">
+      <h2 id="tour-title"><?= e($site['tour']['title']) ?></h2>
+      <p><?= e($site['tour']['text']) ?></p>
+      <p>Our office is at <?= e($site['address']['building']) ?>, <?= e($site['address']['street']) ?>, <?= e($site['address']['city']) ?>.</p>
+      <p><a class="link-arrow" href="<?= e(url('/contact')) ?>">How to find us<?= icon('arrow-right') ?></a></p>
+    </div>
+    <div class="skills">
+      <h3 id="skills-title">Skillset</h3>
+      <ul role="list">
+<?php foreach ($site['skills'] as $i => $s): ?>
+        <li class="skill">
+          <span class="skill-label" id="skill-<?= $i ?>"><?= e($s['label']) ?></span>
+          <span class="skill-value"><?= e((string)$s['value']) ?>%</span>
+          <meter class="skill-meter" min="0" max="100" value="<?= e((string)$s['value']) ?>" aria-labelledby="skill-<?= $i ?>"><?= e((string)$s['value']) ?>%</meter>
+        </li>
+<?php endforeach; ?>
+      </ul>
+      <p><a class="btn btn-primary" href="<?= e(url('/contact')) ?>">Hire us now</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="why-title">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 id="why-title">Why choose us</h2>
+    </div>
+    <ul class="reasons" role="list">
+<?php foreach ($site['reasons'] as $item): ?>
+      <li class="reason">
+        <h3><?= icon($item['icon']) ?><?= e($item['title']) ?></h3>
+        <p><?= e($item['text']) ?></p>
+      </li>
+<?php endforeach; ?>
+    </ul>
+  </div>
+</section>
+
+<?php require ROOT . '/includes/partials/quote-band.php'; ?>
+<?php
+return [
+    'title' => 'About us',
+    'description' => 'Entersoftgroup helps businesses elevate their value: 15+ years and 99+ projects of software, IT consulting and support from our office in Sulaymaniyah.',
+    'path' => '/about',
+];

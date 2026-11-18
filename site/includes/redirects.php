@@ -1,0 +1,24 @@
+<?php
+// Old site URLs (theme pages on www.entersoftgroup.com before the rebuild).
+// A string = one 301 to that path. null = 410 Gone: the old page held only theme demo content.
+return [
+    '/index.html'              => '/',
+    '/index-2.html'            => '/',
+    '/index-3.html'            => '/',
+    '/about.html'              => '/about',
+    '/why-choose-us.html'      => '/about',
+    '/services.html'           => '/about',
+    '/service-details.html'    => '/about',
+    '/team.html'               => '/team',
+    '/team-details.html'       => '/team',
+    '/contact.html'            => '/contact',
+    '/portfolio-grid.html'     => null,
+    '/portfolio-masonary.html' => null,
+    '/portfolio-slider.html'   => null,
+    '/portfolio-details.html'  => null,
+    '/blog-standard.html'      => null,
+    '/blog-grid.html'          => null,
+    '/blog-details.html'       => null,
+    '/single-news.html'        => null,
+    '/faq.html'                => null,
+];

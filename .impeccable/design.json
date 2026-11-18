@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-18T20:49:59.318537+00:00",
+  "title": "Design System: Entersoftgroup",
+  "extensions": {
+    "colorMeta": {
+      "brand-navy": {
+        "role": "primary",
+        "displayName": "Brand Navy"
+      },
+      "brand-orange": {
+        "role": "secondary",
+        "displayName": "Brand Orange"
+      },
+      "ground": {
+        "role": "neutral",
+        "displayName": "Ground"
+      },
+      "tint": {
+        "role": "neutral",
+        "displayName": "Tint"
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink"
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted"
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "h1 only"
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Running text and UI"
+      }
+    },
+    "shadows": [
+      {
+        "name": "soft",
+        "value": "0 1px 2px rgb(12 63 104 / 0.06), 0 8px 24px -8px rgb(12 63 104 / 0.18)",
+        "purpose": "Floating surfaces: menu panel, caption chip, skills panel, hovered channel."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "All state transitions."
+      },
+      {
+        "name": "page",
+        "value": "cross-document view transition, 180ms out / 280ms in",
+        "purpose": "Page change; header stays put."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "two-col",
+        "value": "46rem"
+      },
+      {
+        "name": "wide",
+        "value": "56rem"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Main call to action (Call).",
+      "html": "<a class=\"ds-btn\" href=\"#\">Call 0770 155 8796</a>",
+      "css": ".ds-btn{display:inline-flex;align-items:center;min-height:3rem;padding:.65rem 1.3rem;border-radius:999px;background:#0c3f68;color:#fff;font:650 1rem/1.2 Figtree,sans-serif;text-decoration:none}.ds-btn:hover{background:#082c4a}"
+    },
+    {
+      "name": "Contact Channel",
+      "kind": "custom",
+      "refersTo": "contact-channel",
+      "description": "Full-row contact link.",
+      "html": "<a class=\"ds-ch\" href=\"#\"><span class=\"ds-ic\"></span><span><small>Phone</small><b>0770 155 8796</b></span></a>",
+      "css": ".ds-ch{display:flex;gap:1rem;align-items:center;padding:1rem 1.25rem;border:1px solid #d3dde7;border-radius:12px;color:#0c3f68;text-decoration:none;font-family:Figtree,sans-serif}.ds-ch small{display:block;color:#4a5b6d}.ds-ic{width:2.75rem;height:2.75rem;border-radius:50%;background:#0c3f68}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The company, plainly and well",
+    "overview": "Category-standard software company site in the logo's navy and orange, with real people and stated facts only.",
+    "keyCharacteristics": [
+      "Navy carries, orange accents",
+      "Archivo headings, Figtree body",
+      "Ruled lists over cards",
+      "Call/WhatsApp one tap away"
+    ],
+    "rules": [
+      {
+        "name": "The Logo Pair Rule",
+        "body": "Only navy and orange carry colour.",
+        "section": "colors"
+      },
+      {
+        "name": "Orange Is Never Body Text",
+        "body": "Orange text only on navy.",
+        "section": "colors"
+      }
+    ],
+    "dos": [
+      "Use only stated facts",
+      "Keep contact one tap away"
+    ],
+    "donts": [
+      "No invented testimonials or logos",
+      "No stock photos as staff",
+      "No eyebrow labels"
+    ]
+  }
+}
