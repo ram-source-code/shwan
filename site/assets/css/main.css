@@ -109,6 +109,7 @@ main:focus { outline: none; }
 .btn-ghost-inverse:hover { background: rgb(255 255 255 / 0.1); border-color: var(--on-navy); }
 .btn .icon { inline-size: 1.15em; block-size: 1.15em; }
 .actions { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+@media (max-width: 30rem) { .actions .btn { flex: 1 1 100%; } }
 .link-arrow {
   display: inline-flex; align-items: center; gap: 0.4em; font-weight: 650;
   text-decoration: none; min-block-size: 2.75rem;
@@ -209,7 +210,7 @@ main:focus { outline: none; }
   margin: 0; font: 780 var(--step-3)/1 var(--font-display); color: var(--navy);
   letter-spacing: -0.03em; font-variant-numeric: tabular-nums;
 }
-.fact dd span { color: var(--orange); margin-inline-start: 0.05em; }
+.fact dd span { color: var(--navy); margin-inline-start: 0.05em; }
 .hero-figure { position: relative; margin: 0; justify-self: center; inline-size: min(100%, 22rem); }
 .hero-figure::before {
   content: ""; position: absolute; inset-inline: 6%; inset-block-end: 0; aspect-ratio: 1;
@@ -247,8 +248,8 @@ main:focus { outline: none; }
 .reason p { color: var(--muted); max-inline-size: 48ch; }
 
 /* Team */
-.team-grid { display: grid; gap: clamp(1.25rem, 1rem + 1.5vw, 2rem); grid-template-columns: repeat(auto-fill, minmax(min(100%, 9.5rem), 1fr)); }
-@media (min-width: 40rem) { .team-grid { grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr)); } }
+.team-grid { display: grid; gap: clamp(1.25rem, 1rem + 1.5vw, 2rem); grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (min-width: 46rem) { .team-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
 .member { display: flex; flex-direction: column; }
 .member-photo { order: -1; margin-block-end: 1rem; border-radius: var(--radius); overflow: hidden; background: var(--tint-2); box-shadow: 0 0 0 1px var(--line); }
 .member-photo img { inline-size: 100%; aspect-ratio: 370 / 480; object-fit: cover; transition: scale 0.5s var(--ease-out); }
@@ -257,7 +258,7 @@ main:focus { outline: none; }
 .member-lead .member-role { color: var(--navy); }
 
 /* About: training photo & skills */
-.tour { margin: 0; }
+.tour { margin: 0; max-inline-size: 25rem; justify-self: center; }
 .tour-photo img { border-radius: var(--radius); box-shadow: var(--shadow); inline-size: 100%; }
 .facts-inline { margin-block-start: 2.5rem; }
 .split-center { align-items: center; }
@@ -314,7 +315,9 @@ main:focus { outline: none; }
 .site-footer { background: var(--navy-ink); color: var(--on-navy-muted); padding-block: clamp(3rem, 2rem + 3vw, 4.5rem) 0; --focus: var(--orange); }
 .site-footer a { color: var(--on-navy); text-decoration-color: rgb(255 255 255 / 0.35); }
 .site-footer a:hover { text-decoration-color: var(--orange); }
-.footer-grid { display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr)); }
+.footer-grid { display: grid; gap: 2rem; grid-template-columns: 1fr; }
+@media (min-width: 36rem) { .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 64rem) { .footer-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
 .footer-name { font: 760 var(--step-2)/1.1 var(--font-display); color: var(--on-navy); margin-block-end: 0.5rem; letter-spacing: -0.02em; }
 .footer-h { font: 700 var(--step--1)/1.3 var(--font-body); color: var(--orange); margin-block-end: 0.75rem; letter-spacing: 0; }
 .footer-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.15rem; }
@@ -322,7 +325,8 @@ main:focus { outline: none; }
 .site-footer address { margin-block-end: 0.75rem; }
 .footer-base { margin-block-start: 3rem; padding-block: 1.5rem; font-size: var(--step--1); }
 .site-footer > .footer-base { max-inline-size: none; background: var(--footer-base); }
-.footer-base p { max-inline-size: 76rem; margin-inline: auto; }
+.footer-base p { box-sizing: border-box; max-inline-size: 76rem; margin-inline: auto; padding-inline: var(--gutter); }
+.site-footer > .footer-base { padding-inline: 0; }
 
 /* Error pages */
 .error-body { min-block-size: 100dvh; display: grid; place-items: center; background: var(--tint); }

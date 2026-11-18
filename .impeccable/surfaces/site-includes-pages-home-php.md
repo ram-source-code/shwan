@@ -12,7 +12,7 @@ Scope: whole public site, mode Persuade. Audience: Suli businesses choosing a lo
 ## Direction contract
 
 THESIS: The category standard played straight (user chose the standing exit): a clean, confident software-company site in the brand's own navy and orange, at the craft level of well-made agency sites. It refuses stock-photo heroes, fake proof and template filler.
-OWN-WORLD: White and navy-tinted light grounds; brand navy #0C3F68 carries headings, buttons and one full-bleed navy band; brand orange #F7941E as the single accent (rules, marks, focus ring, highlight behind numbers), never as text on white. Archivo headings (wght axis), Figtree body. 12px radius, soft offset shadows, 1.5px line icons.
+OWN-WORLD: White and navy-tinted light grounds; brand navy #0C3F68 carries headings, buttons and one full-bleed navy band; brand orange #F7941E as the single accent (founder disc, icons, focus ring on navy, text only on navy), never as text on white; no one-sided rules or stripes (user rule). Archivo headings (wght axis), Figtree body. 12px radius, soft offset shadows, 1.5px line icons.
 STORY: Visitor sees who Entersoftgroup is and where (Suli), sees the founder and team are real, reads six reasons, and taps Call/WhatsApp.
 FIRST VIEWPORT: Left: h1 "We create perfect brand goods value", one supporting line, Call + WhatsApp buttons, facts 15+ / 99+. Right: founder cut-out portrait on an orange disc echoing the logo badge. Header: logo, Home/About/Team/Contact, phone button.
 FORM: canon (standing exit), chosen over assigned direction; seed:a59f9699f019a0e1

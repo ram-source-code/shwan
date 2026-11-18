@@ -27,7 +27,6 @@
   <div class="wrap split split-center">
     <div class="prose">
       <h2 id="tour-title"><?= e($site['tour']['title']) ?></h2>
-      <p><?= e($site['tour']['text']) ?></p>
       <p>Our office is at <?= e($site['address']['building']) ?>, <?= e($site['address']['street']) ?>, <?= e($site['address']['city']) ?>.</p>
       <p><a class="link-arrow" href="<?= e(url('/contact')) ?>">How to find us<?= icon('arrow-right') ?></a></p>
     </div>
@@ -44,22 +43,6 @@
       </ul>
       <p><a class="btn btn-primary" href="<?= e(url('/contact')) ?>">Hire us now</a></p>
     </div>
-  </div>
-</section>
-
-<section class="section" aria-labelledby="why-title">
-  <div class="wrap">
-    <div class="section-head">
-      <h2 id="why-title">Why choose us</h2>
-    </div>
-    <ul class="reasons">
-<?php foreach ($site['reasons'] as $item): ?>
-      <li class="reason">
-        <h3><?= icon($item['icon']) ?><?= e($item['title']) ?></h3>
-        <p><?= e($item['text']) ?></p>
-      </li>
-<?php endforeach; ?>
-    </ul>
   </div>
 </section>
 

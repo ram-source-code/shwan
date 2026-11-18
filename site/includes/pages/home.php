@@ -6,7 +6,7 @@ $r = $site['reasons'];
   <div class="wrap hero-grid">
     <div class="hero-copy">
       <h1 id="hero-title"><?= e($site['hero']['title']) ?></h1>
-      <p class="hero-lead"><?= e($site['hero']['lead']) ?></p>
+      <p class="hero-lead"><?= e($site['hero']['intro']) ?></p>
 <?php require ROOT . '/includes/partials/contact-actions.php'; ?>
       <dl class="facts">
 <?php foreach ($site['facts'] as $f): ?>

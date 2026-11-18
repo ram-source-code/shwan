@@ -89,7 +89,7 @@ A clean, confident software-company site played straight (the client chose the c
 - **Brand navy `#0c3f68`**: headings, primary buttons, current-page indicator, the full-bleed "Get a quote" band. White on navy is 11:1.
 
 ### Secondary
-- **Brand orange `#f7941e`**: accent only. Never text on white (2.2:1). Allowed: as a fill under navy text (4.9:1), as text on navy (4.9:1), for icons and decorative marks.
+- **Brand orange `#f7941e`**: accent only. Never text on white (2.2:1). Allowed: as a fill under navy text (4.9:1), as text on navy (4.9:1), for icons and the founder disc. The "+" on facts is navy.
 
 ### Neutral
 - `ground #fff`, `tint #f1f5f9` (alternating sections, page heading band), `tint-2 #e4ecf3` (meter tracks, photo backdrops), `line #d3dde7` (rules, card borders), `ink #142333` (body), `muted #4a5b6d` (secondary text, 7:1 on white), `navy-ink #0d2236` (footer ground).
