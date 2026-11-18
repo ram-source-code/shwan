@@ -1,0 +1,13 @@
+# dev tooling (reinstall: cd .devtools && npm i; npx impeccable install)
+.devtools/
+.claude/settings.local.json
+.claude/skills/
+.claude/agents/
+# secrets + runtime state
+site/.env
+site/data/*
+!site/data/.htaccess
+# impeccable runtime dirs
+.impeccable/hook.cache.json
+.impeccable/questions/
+.impeccable/mocks/
