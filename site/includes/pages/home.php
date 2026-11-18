@@ -36,7 +36,7 @@ $r = $site['reasons'];
     <div class="section-head">
       <h2 id="why-title">Why choose us</h2>
     </div>
-    <ul class="reasons" role="list">
+    <ul class="reasons">
 <?php foreach ($r as $item): ?>
       <li class="reason">
         <h3><?= icon($item['icon']) ?><?= e($item['title']) ?></h3>

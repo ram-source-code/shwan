@@ -30,6 +30,7 @@ $ld = [
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="text-scale" content="scale">
 <title><?= e($title) ?></title>
 <meta name="description" content="<?= e($meta['description']) ?>">
 <link rel="canonical" href="<?= e(abs_url($meta['path'])) ?>">
@@ -74,7 +75,7 @@ $ld = [
 <?php foreach ($nav as $href => $label): ?>
         <li><a href="<?= e(url($href)) ?>"<?= $meta['path'] === $href ? ' aria-current="page"' : '' ?>><?= e($label) ?></a></li>
 <?php endforeach; ?>
-        <li class="menu-call"><a class="btn btn-primary btn-sm" href="<?= e($tel) ?>"><?= icon('phone') ?><span dir="ltr"><?= e(iraq_mobile_local($site['phone'])) ?></span></a></li>
+        <li class="menu-call"><a class="btn btn-primary btn-sm" href="<?= e($tel) ?>"><?= icon('phone') ?><span class="visually-hidden">Call </span><span dir="ltr"><?= e(iraq_mobile_local($site['phone'])) ?></span></a></li>
       </ul>
     </nav>
   </div>
@@ -100,7 +101,7 @@ $ld = [
     <div>
       <h2 class="footer-h">Contact</h2>
       <ul class="footer-list">
-        <li><a href="<?= e($tel) ?>"><?= icon('phone') ?><span dir="ltr"><?= e(iraq_mobile_local($site['phone'])) ?></span></a></li>
+        <li><a href="<?= e($tel) ?>"><?= icon('phone') ?><span class="visually-hidden">Call </span><span dir="ltr"><?= e(iraq_mobile_local($site['phone'])) ?></span></a></li>
         <li><a href="https://wa.me/<?= e(substr($site['phone'], 1)) ?>" target="_blank" rel="noopener noreferrer"><?= icon('chat') ?>WhatsApp<span class="visually-hidden"> (opens in a new tab)</span></a></li>
         <li><a href="mailto:<?= e($site['email']) ?>"><?= icon('mail') ?><?= e($site['email']) ?></a></li>
         <li><a href="<?= e($site['facebook']) ?>" target="_blank" rel="noopener noreferrer"><?= icon('facebook') ?>Facebook<span class="visually-hidden"> (opens in a new tab)</span></a></li>

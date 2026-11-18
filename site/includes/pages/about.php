@@ -17,9 +17,9 @@
 <?php endforeach; ?>
       </dl>
     </div>
-    <figure class="tour">
+    <div class="tour">
       <?= picture('training-room', [400], 400, 440, 'A training session in a classroom: the presenter points at software projected in Kurdish on the screen', '(min-width: 64rem) 25rem, 90vw', false, 'tour-photo') ?>
-    </figure>
+    </div>
   </div>
 </section>
 
@@ -33,7 +33,7 @@
     </div>
     <div class="skills">
       <h3 id="skills-title">Skillset</h3>
-      <ul role="list">
+      <ul>
 <?php foreach ($site['skills'] as $i => $s): ?>
         <li class="skill">
           <span class="skill-label" id="skill-<?= $i ?>"><?= e($s['label']) ?></span>
@@ -52,7 +52,7 @@
     <div class="section-head">
       <h2 id="why-title">Why choose us</h2>
     </div>
-    <ul class="reasons" role="list">
+    <ul class="reasons">
 <?php foreach ($site['reasons'] as $item): ?>
       <li class="reason">
         <h3><?= icon($item['icon']) ?><?= e($item['title']) ?></h3>

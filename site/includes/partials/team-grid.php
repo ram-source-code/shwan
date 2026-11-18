@@ -4,7 +4,7 @@
 $hn = $team_heading_level ?? 'h3';
 $eager = !empty($team_lcp);   // true where the grid is the first content (the /team page)
 ?>
-<ul class="team-grid" role="list">
+<ul class="team-grid">
 <?php foreach ($site['team'] as $i => $m): ?>
   <li class="member<?= $i === 0 ? ' member-lead' : '' ?>">
     <?= picture($m['img'], [370], 370, 480, 'Portrait of ' . $m['name'], '(min-width: 64rem) 18rem, (min-width: 40rem) 30vw, 45vw', $eager && $i === 0, 'member-photo') ?>
