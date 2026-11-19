@@ -25,7 +25,7 @@ $nt = '<span class="visually-hidden"> ' . e(t('new_tab')) . '</span>';
         <span translate="no">Entersoftgroup</span><br>
         <?= e($addr[0]) ?><br><?= e($addr[1]) ?><br><?= e(implode(LANG === 'en' ? ', ' : '، ', array_slice($addr, 2))) ?>
       </address>
-      <p><a class="btn btn-secondary" href="<?= e($site['maps_url']) ?>" target="_blank" rel="noopener noreferrer"><?= icon('map') ?><?= e(t('maps')) ?><?= $nt ?></a></p>
+      <p><a class="btn btn-secondary" href="<?= e($site['maps_url']) ?>" target="_blank" rel="noopener noreferrer"><?= icon('pin') ?><?= e(t('maps')) ?><?= $nt ?></a></p>
     </div>
   </div>
 </section>

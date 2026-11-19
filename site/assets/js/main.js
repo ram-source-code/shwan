@@ -13,7 +13,7 @@
     switcher?.querySelectorAll('button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.themeSet === effective)));
   };
   if (switcher) {
-    switcher.hidden = false;
+    (switcher.closest('[hidden]') || switcher).hidden = false;
     switcher.addEventListener('click', (e) => {
       const btn = e.target.closest('button[data-theme-set]');
       if (!btn) return;

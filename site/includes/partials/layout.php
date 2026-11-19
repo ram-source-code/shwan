@@ -85,21 +85,6 @@ if ($og['path'] === '') $og['path'] = '/';
 <!--email_off-->
 <a class="skip-link" href="#main"><?= e(t('skip')) ?></a>
 <header class="site-header">
-  <div class="edition">
-    <div class="wrap edition-inner">
-      <div class="edition-tools">
-        <nav class="lang-switch" aria-label="<?= e(t('language')) ?>">
-<?php foreach ($langs as $code => $l): ?>
-          <a href="<?= e(lurl($meta['path'], $code)) ?>" lang="<?= e($code) ?>" hreflang="<?= e($code) ?>"<?= $code === LANG ? ' aria-current="true"' : '' ?>><?= e($l['name']) ?></a>
-<?php endforeach; ?>
-        </nav>
-        <div class="theme-switch" role="group" aria-label="<?= e(t('theme')) ?>" hidden>
-          <button type="button" data-theme-set="light" aria-pressed="false"><?= icon('sun') ?><span class="visually-hidden"><?= e(t('theme_light')) ?></span></button>
-          <button type="button" data-theme-set="dark" aria-pressed="false"><?= icon('moon') ?><span class="visually-hidden"><?= e(t('theme_dark')) ?></span></button>
-        </div>
-      </div>
-    </div>
-  </div>
   <div class="header-inner wrap">
     <a class="site-logo" href="<?= e(lurl('/')) ?>"<?= $meta['path'] === '/' ? ' aria-current="page"' : '' ?>>
       <picture class="logo-light">
@@ -112,17 +97,36 @@ if ($og['path'] === '') $og['path'] = '/';
       </picture>
     </a>
     <p class="nav-tagline" aria-hidden="true"><?= e(t('tagline')) ?></p>
-    <nav class="site-nav" aria-label="<?= e(t('menu')) ?>">
-      <button class="menu-button" type="button" popovertarget="site-menu" popovertargetaction="toggle" aria-controls="site-menu">
-        <?= icon('menu') ?><span><?= e(t('menu')) ?></span>
-      </button>
-      <ul id="site-menu" class="site-menu" popover="auto">
-<?php foreach (t('nav') as $href => $label): ?>
-        <li><a href="<?= e(lurl($href)) ?>"<?= $meta['path'] === $href ? ' aria-current="page"' : '' ?>><?= e($label) ?></a></li>
+    <div class="header-actions">
+      <div class="lang-picker">
+        <button class="icon-button lang-button" type="button" popovertarget="lang-menu" popovertargetaction="toggle" aria-controls="lang-menu">
+          <?= icon('globe') ?><span class="visually-hidden"><?= e(t('language')) ?>: </span><span class="lang-current"><?= e(t('name')) ?></span>
+        </button>
+        <ul id="lang-menu" class="lang-menu" popover="auto" aria-label="<?= e(t('language')) ?>">
+<?php foreach ($langs as $code => $l): ?>
+          <li><a href="<?= e(lurl($meta['path'], $code)) ?>" lang="<?= e($code) ?>" hreflang="<?= e($code) ?>"<?= $code === LANG ? ' aria-current="true"' : '' ?>><?= e($l['name']) ?></a></li>
 <?php endforeach; ?>
-        <li class="menu-call"><a class="btn btn-primary btn-sm" href="<?= e($tel) ?>"><?= icon('phone') ?><span class="visually-hidden"><?= e(t('call')) ?> </span><bdo dir="ltr"><?= e(phone_local($site['phone'])) ?></bdo></a></li>
-      </ul>
-    </nav>
+        </ul>
+      </div>
+      <nav class="site-nav" aria-label="<?= e(t('menu')) ?>">
+        <button class="menu-button" type="button" popovertarget="site-menu" popovertargetaction="toggle" aria-controls="site-menu">
+          <?= icon('menu') ?><span><?= e(t('menu')) ?></span>
+        </button>
+        <ul id="site-menu" class="site-menu" popover="auto">
+<?php foreach (t('nav') as $href => $label): ?>
+          <li><a href="<?= e(lurl($href)) ?>"<?= $meta['path'] === $href ? ' aria-current="page"' : '' ?>><?= e($label) ?></a></li>
+<?php endforeach; ?>
+          <li class="menu-call"><a class="btn btn-primary btn-sm" href="<?= e($tel) ?>"><?= icon('phone') ?><span class="visually-hidden"><?= e(t('call')) ?> </span><bdo dir="ltr"><?= e(phone_local($site['phone'])) ?></bdo></a></li>
+          <li class="menu-theme" hidden>
+            <span class="menu-theme-label" aria-hidden="true"><?= e(t('theme')) ?></span>
+            <div class="theme-switch" role="group" aria-label="<?= e(t('theme')) ?>">
+              <button type="button" data-theme-set="light" aria-pressed="false"><?= icon('sun') ?><span class="visually-hidden"><?= e(t('theme_light')) ?></span></button>
+              <button type="button" data-theme-set="dark" aria-pressed="false"><?= icon('moon') ?><span class="visually-hidden"><?= e(t('theme_dark')) ?></span></button>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </div>
   </div>
 </header>
 <main id="main" tabindex="-1">
@@ -142,7 +146,7 @@ if ($og['path'] === '') $og['path'] = '/';
     <div>
       <h2 class="footer-h"><?= e(t('visit_us')) ?></h2>
       <address><?= e($addr[0]) ?><br><?= e($addr[1]) ?><br><?= e($addr[2]) ?><?= e($comma) ?><?= e($addr[3]) ?></address>
-      <p><a href="<?= e($site['maps_url']) ?>" target="_blank" rel="noopener noreferrer"><?= e(t('maps')) ?><span class="visually-hidden"> <?= e(t('new_tab')) ?></span></a></p>
+      <p><a class="footer-maps" href="<?= e($site['maps_url']) ?>" target="_blank" rel="noopener noreferrer"><?= icon('pin') ?><?= e(t('maps')) ?><span class="visually-hidden"> <?= e(t('new_tab')) ?></span></a></p>
     </div>
     <div>
       <h2 class="footer-h"><?= e(t('contact')) ?></h2>
