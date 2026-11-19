@@ -33,7 +33,7 @@ $ld = ['@context' => 'https://schema.org', '@graph' => [
      'about' => ['@id' => abs_url('/') . '#business'], 'primaryImageOfPage' => abs_url('/og-default.jpg')],
     $biz,
 ]];
-$og = $meta + ['locale' => t('locale'), 'alternates' => $alternates, 'og_alt' => t('og_alt'), 'path' => LANGS[LANG] . ($meta['path'] === '/' ? '' : $meta['path'])];
+$og = array_merge($meta, ['locale' => t('locale'), 'alternates' => $alternates, 'og_alt' => t('og_alt'), 'path' => LANGS[LANG] . ($meta['path'] === '/' ? '' : $meta['path'])]);
 if ($og['path'] === '') $og['path'] = '/';
 ?><!doctype html>
 <html lang="<?= e(LANG) ?>" dir="<?= e(t('dir')) ?>" data-base="<?= e(BASE) ?>">
