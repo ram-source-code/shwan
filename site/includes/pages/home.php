@@ -3,7 +3,6 @@
   <div class="wrap hero-grid">
     <div class="hero-copy">
       <h1 id="hero-title"><?= e(t('hero_title')) ?></h1>
-<?php require ROOT . '/includes/partials/headline-strip.php'; ?>
       <p class="hero-lead"><?= tx(t('hero_intro')) ?></p>
 <?php require ROOT . '/includes/partials/contact-actions.php'; ?>
 <?php require ROOT . '/includes/partials/facts.php'; ?>
@@ -17,7 +16,7 @@
   </div>
 </section>
 
-<?php require ROOT . '/includes/partials/proof.php'; ?>
+<?php require ROOT . '/includes/partials/services.php'; ?>
 <div class="ornament ornament-section" aria-hidden="true"></div>
 
 <section class="section section-tint" aria-labelledby="about-title">

@@ -1,6 +1,6 @@
 ---
 name: Entersoftgroup
-description: Sulaymaniyah software and IT company; a two-ink trilingual proof sheet set in Kurdish, Arabic and English.
+description: Sulaymaniyah database and IT company; a two-ink press system, one language per page in Kurdish, Arabic or English.
 colors:
   ink-navy: "#0c3f68"
   navy-deep: "#082c4a"
@@ -140,9 +140,9 @@ components:
 
 **Creative North Star: "The Suli Trilingual Press"**
 
-The site is a two-colour proof sheet pulled in a Sulaymaniyah print shop that sets every line in three scripts. Light mode is bright white stock; dark mode is the navy-black printing plate itself. There are only two inks, the logo's navy and orange, and every surface is either stock, a tint of stock, or a solid plate of ink. Separation happens with full four-sided frames, ornament rows and space, never with hairline rules or single-edge accents.
+The site is a two-colour proof sheet pulled in a Sulaymaniyah print shop that prints the same edition in three languages, one language per sheet. Light mode is bright white stock; dark mode is the navy-black printing plate itself. There are only two inks, the logo's navy and orange, and every surface is either stock, a tint of stock, or a solid plate of ink. Separation happens with full four-sided frames, ornament rows and space, never with hairline rules or single-edge accents.
 
-Density is calm and phone-first: big type in the page language, then the same claim proofed in the other two scripts at small size, then the real team and a way to call. The world refuses the IT-category default (blue gradient, laptop hero, icon-card grid) and equally refuses the vintage-newspaper costume: no distressed textures, no column rules, no fake mastheads with dates and prices.
+Density is calm and phone-first: big type in the page language saying what the company does (databases and IT), the call buttons, the four services, then the real team and a way to call. Other languages are reached only through the language switch: the same sentence is never shown three times. The world refuses the IT-category default (blue gradient, laptop hero, icon-card grid) and equally refuses the vintage-newspaper costume: no distressed textures, no column rules, no fake mastheads with dates and prices.
 
 Kurdish (Sorani, `ckb`) is the default language and is RTL, as is Arabic; English is LTR. The theme is Auto by default and follows the system, with explicit Light and Dark overrides.
 
@@ -159,21 +159,21 @@ Kurdish (Sorani, `ckb`) is the default language and is RTL, as is Arabic; Englis
 Two printing inks and their grounds; the dark theme swaps white stock for the inked plate rather than inverting the palette.
 
 ### Primary
-- **Logo Navy Ink** (`ink-navy`): headings, frames, primary buttons, the edition strip, the lead proof panel, the quote band and the footer plate in light mode. It is the ink everything is printed in.
+- **Logo Navy Ink** (`ink-navy`): headings, frames, primary buttons, the edition strip, the lead service panel, the quote band and the footer plate in light mode. It is the ink everything is printed in.
 - **Deep Navy** (`navy-deep`): hover state of navy buttons.
 - **Navy Ink Black** (`navy-ink`): text set on orange (accent buttons, active language and theme chips, text selection).
 
 ### Secondary
-- **Logo Orange Ink** (`ink-orange`): the second ink. Accent buttons on plates, the ornament band, active language/theme chips, the founder plate's disc, link-hover underlines, focus ring in dark mode, and the primary button fill in dark mode.
+- **Logo Orange Ink** (`ink-orange`): the second ink. Accent buttons on plates, the ornament band, active language/theme chips, link-hover underlines, focus ring in dark mode, and the primary button fill in dark mode.
 - **Orange Ink, Hover** (`orange-hover`): hover of orange fills.
-- **Orange Text, Light** (`orange-text`): orange when it must carry text or icons on white stock (proof labels, reason and channel icons, lead team role); the raw ink fails contrast as text on white.
+- **Orange Text, Light** (`orange-text`): orange when it must carry text or icons on white stock (service, reason and channel icons, lead team role); the raw ink fails contrast as text on white.
 - **Orange Text, Dark** (`orange-text-dark`): the same role on the dark plate.
 
 ### Neutral
 - **White Stock** (`stock-white`): page ground in light mode, inside of every frame.
 - **Tinted Stock** (`stock-tint`): alternating section bands, page heroes, the visit panel, and the paper ground of photo plates.
 - **Body Ink** (`body-text`) and **Muted Ink** (`muted-text`): running text and secondary text (labels, leads, roles).
-- **Soft Frame** (`frame-soft`): the quieter frame for proof-strip chips and contact channels at rest.
+- **Soft Frame** (`frame-soft`): the quieter frame for contact channels at rest.
 - **Plate Muted** (`plate-muted`): secondary text on a navy plate.
 - **Photo Ground** (`photo-ground`): neutral fill behind photos while loading.
 - **Dark Plate** (`plate-dark`): in dark mode, the edition strip, lead proof panel, quote band and footer sink to near-black so they still read as the deepest ink.
@@ -215,7 +215,7 @@ Two printing inks and their grounds; the dark theme swaps white stock for the in
 
 A single centred container (`76rem`) with a fluid gutter (`clamp(1rem, 0.5rem + 2.5vw, 2rem)`); sections breathe on a fluid rhythm (`clamp(3.5rem, 2rem + 6vw, 7rem)`) and alternate white stock with tinted-stock bands. Layout is written entirely in logical properties (`inline-size`, `margin-inline`, `inset-inline-start`, `padding-block`), so every page mirrors for RTL without a second stylesheet.
 
-Breakpoints: below 46rem the hero stacks with the founder plate first and cropped short, buttons go full width under 30rem, and the proof strip moves under the lead; at 46rem the hero becomes a 1.15fr / 0.85fr split, splits go two-up, and the team grid goes from 2 to 4 columns; at 56rem the quote band and contact grid split; the footer grows from 1 to 2 (36rem) to 4 columns (64rem). Repeating sets (proof sheet, reasons, channels) use `auto-fit` grids with `minmax(min(100%, 17 to 21rem), 1fr)`.
+Breakpoints: below 46rem the hero stacks with the copy and call buttons first and the founder plate after them, cropped short; buttons go full width under 30rem; at 46rem the hero becomes a 1.15fr / 0.85fr split, splits go two-up, and the team grid goes from 2 to 4 columns; at 56rem the quote band and contact grid split; the footer grows from 1 to 2 (36rem) to 4 columns (64rem). Repeating sets (services, reasons, channels) use `auto-fit` grids with `minmax(min(100%, 17 to 21rem), 1fr)`.
 
 ### Named Rules
 **The Mirror Only What Points Rule.** In RTL, only directional glyphs flip (`scale: -1 1` on the link arrow and anything marked as flippable); logos, the cube ornament, registration marks, photos and the phone glyph do not.
@@ -236,7 +236,7 @@ Flat by construction. Depth is printed, not lit: a plate of solid ink sits behin
 
 ## Shapes
 
-Every container is a closed rectangle: a 2px frame on all four sides (1.5px for small chips) with a slightly softened 4px corner; images inside plates take a 2px corner. Two drawn devices come from the press and the logo: the registration mark (a circle crossed by full-length hairlines) placed overlapping a frame corner or edge, and the cube-and-S ornament, a hexagonal cube repeated as a band (40 by 20px tile) and used as a bullet glyph in the edition strip and reasons. Circles appear only as the founder's orange disc.
+Every container is a closed rectangle: a 2px frame on all four sides (1.5px for small chips) with a slightly softened 4px corner; images inside plates take a 2px corner. Two drawn devices come from the press and the logo: the registration mark (a circle crossed by full-length hairlines) placed overlapping a frame corner or edge, and the cube-and-S ornament, a hexagonal cube repeated as a band (40 by 20px tile) and used as a bullet glyph in the edition strip and reasons. No circles: the founder cutout sits on the plain paper ground (an orange disc behind the cutout exposed its edge halo and competed with the headline).
 
 ### Named Rules
 **The Four Sides Rule.** A border is all four sides or none. No single-edge borders, no accent stripes, no column rules, no underline bars under headings.
@@ -252,7 +252,7 @@ Stamped ink blocks: solid, square-shouldered, no gradient.
 - **Hover / Focus:** colour shift over 0.2s on an expo-out ease, plus a 1px lift (motion permitting); focus is a 3px solid ring offset 3px, navy in light, orange in dark and on plates.
 
 ### Masthead and Navigation
-- **Edition strip:** a full-width navy (dark: near-black) band holding the brand name in Archivo, the company line in all three scripts with cube bullets (hidden below 46rem), the language switch (native names, active language as an orange chip) and the Auto/Light/Dark theme switch (three icon buttons in a thin framed group, active in orange).
+- **Edition strip:** a full-width navy (dark: near-black) band holding the brand name in Archivo, the language switch (native names, active language as an orange chip) and the Auto/Light/Dark theme switch (three icon buttons in a thin framed group, active in orange).
 - **Framed nav box:** below the strip, the logo and navigation sit in a full 2px framed box inside the gutter, never a bare bar. Wide screens show links inline with a small Call button; narrow screens show a framed Menu button opening a framed popover list. The current page is a navy (dark: orange) filled chip. The logo swaps to its dark variant on the plate.
 
 ### Fact Boxes
@@ -269,7 +269,7 @@ Photos are always printed into a plate: a 2px frame, tinted paper ground, 0.5 to
 A single large framed sheet with a registration mark at its corner, holding an `auto-fit` grid of reasons, each a title with a cube glyph in orange text and a muted paragraph. No per-item cards, no icon discs.
 
 ### Ornament Band
-A 20px row of the cube-and-S ornament in orange ink (CSS mask of the ornament SVG), used to close the proof sheet and to open the footer. It is the section divider instead of a rule.
+A 20px row of the cube-and-S ornament in orange ink (CSS mask of the ornament SVG), used to close the services section and to open the footer. It is the section divider instead of a rule.
 
 ### Contact Channels
 Framed rows (soft frame at rest, full frame on hover): a 1.9rem line icon in orange text, the channel name as a muted label, and the value in Archivo; phone values in `<bdo dir="ltr">`. Beside them, the visit panel: a tinted framed box with the address.
@@ -300,7 +300,7 @@ Language changes run a cross-document view transition: the page fades and the he
 - **Don't** use one-sided borders, accent stripes, column rules or heading underline bars.
 - **Don't** use blurred drop shadows anywhere except the floating menu popover.
 - **Don't** use stock photos; only the real team, founder and training room.
-- **Don't** build icon-disc cards or icon-card grids.
+- **Don't** build icon-disc cards or icon-card grids beyond the one four-panel services row (framed panels, lead panel in navy, line icon, no discs).
 - **Don't** put eyebrows or kickers above headings.
 - **Don't** fabricate proof: no invented testimonials, client logos, ratings or numbers.
 - **Don't** add a third hue or a gradient.

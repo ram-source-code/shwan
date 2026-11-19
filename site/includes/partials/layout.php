@@ -86,7 +86,6 @@ if ($og['path'] === '') $og['path'] = '/';
 <header class="site-header">
   <div class="edition">
     <div class="wrap edition-inner">
-      <p class="edition-tagline"><span class="edition-name" translate="no" dir="ltr">Entersoftgroup</span><?php foreach ($langs as $code => $l): ?><span class="edition-line<?= $code === LANG ? ' is-current' : '' ?>" lang="<?= e($code) ?>" dir="<?= e($l['dir']) ?>"><?= icon('cube') ?><?= e($l['tagline']) ?></span><?php endforeach; ?></p>
       <div class="edition-tools">
         <nav class="lang-switch" aria-label="<?= e(t('language')) ?>">
 <?php foreach ($langs as $code => $l): ?>
