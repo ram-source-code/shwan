@@ -21,7 +21,7 @@
   </div>
 </section>
 
-<?php require ROOT . '/includes/partials/proof.php'; ?>
+<?php require ROOT . '/includes/partials/services.php'; ?>
 
 <section class="section section-tint" aria-labelledby="tour-title">
   <div class="wrap split split-center">
