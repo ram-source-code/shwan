@@ -9,7 +9,6 @@ return [
     'menu' => 'Menu',
     'language' => 'Language',
     'theme' => 'Theme',
-    'theme_auto' => 'Auto',
     'theme_light' => 'Light',
     'theme_dark' => 'Dark',
     'call' => 'Call',
