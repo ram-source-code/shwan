@@ -369,7 +369,7 @@ bdi { unicode-bidi: isolate; }
 .footer-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.15rem; }
 .footer-list a { display: inline-flex; align-items: center; gap: 0.5rem; min-block-size: 2.5rem; }
 .site-footer address { margin-block-end: 0.75rem; }
-.footer-base { margin-block-start: 3rem; padding-block: 1.25rem; font-size: var(--step--1); background: rgb(0 0 0 / 0.18); }
+.footer-base { margin-block-start: 3rem; padding-block: 1.25rem; font-size: var(--step--1); background: var(--navy-ink); }
 .footer-base p { max-inline-size: 76rem; margin-inline: auto; padding-inline: var(--gutter); }
 
 .error-body { min-block-size: 100dvh; display: grid; place-items: center; background: var(--bg-2); }
