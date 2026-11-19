@@ -1,6 +1,7 @@
 <?php $skills = t('skills'); ?>
 <section class="page-hero" aria-labelledby="page-title">
-  <div class="wrap">
+  <div class="wrap page-hero-inner">
+    <span class="reg reg-a" aria-hidden="true"><?= icon('regmark') ?></span>
     <h1 id="page-title"><?= e(t('about_title')) ?></h1>
     <p class="page-lead"><?= tx(t('lead')) ?></p>
   </div>
@@ -31,15 +32,11 @@
     </div>
     <div class="skills">
       <h2 id="skills-title"><?= e(t('skills_title')) ?></h2>
-      <ul>
+      <dl class="facts facts-skills">
 <?php foreach ($site['skills'] as $i => $v): ?>
-        <li class="skill">
-          <span class="skill-label" id="skill-<?= $i ?>"><?= e($skills[$i]) ?></span>
-          <span class="skill-value"><?= e(num((string)$v)) ?><?= LANG === 'en' ? '%' : '٪' ?></span>
-          <meter class="skill-meter" min="0" max="100" value="<?= $v ?>" aria-labelledby="skill-<?= $i ?>"><?= $v ?>%</meter>
-        </li>
+        <div class="fact"><dt><?= e($skills[$i]) ?></dt><dd><?= e(num((string)$v)) ?><span><?= LANG === 'en' ? '%' : '٪' ?></span></dd></div>
 <?php endforeach; ?>
-      </ul>
+      </dl>
       <p><a class="btn btn-primary" href="<?= e(lurl('/contact')) ?>"><?= e(t('hire')) ?></a></p>
     </div>
   </div>

@@ -1,5 +1,6 @@
 <section class="page-hero" aria-labelledby="page-title">
-  <div class="wrap">
+  <div class="wrap page-hero-inner">
+    <span class="reg reg-a" aria-hidden="true"><?= icon('regmark') ?></span>
     <h1 id="page-title"><?= e(t('team_title')) ?></h1>
     <p class="page-lead"><?= tx(t('team_lead')) ?></p>
   </div>

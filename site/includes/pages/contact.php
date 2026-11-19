@@ -4,7 +4,8 @@ $addr = t('address');
 $nt = '<span class="visually-hidden"> ' . e(t('new_tab')) . '</span>';
 ?>
 <section class="page-hero" aria-labelledby="page-title">
-  <div class="wrap">
+  <div class="wrap page-hero-inner">
+    <span class="reg reg-a" aria-hidden="true"><?= icon('regmark') ?></span>
     <h1 id="page-title"><?= e(t('contact_title')) ?></h1>
     <p class="page-lead"><?= e(t('contact_lead')) ?></p>
   </div>

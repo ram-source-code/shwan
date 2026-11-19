@@ -3,6 +3,7 @@
   <div class="wrap hero-grid">
     <div class="hero-copy">
       <h1 id="hero-title"><?= e(t('hero_title')) ?></h1>
+<?php require ROOT . '/includes/partials/headline-strip.php'; ?>
       <p class="hero-lead"><?= tx(t('hero_intro')) ?></p>
 <?php require ROOT . '/includes/partials/contact-actions.php'; ?>
 <?php require ROOT . '/includes/partials/facts.php'; ?>
@@ -17,6 +18,7 @@
 </section>
 
 <?php require ROOT . '/includes/partials/proof.php'; ?>
+<div class="ornament ornament-section" aria-hidden="true"></div>
 
 <section class="section section-tint" aria-labelledby="about-title">
   <div class="wrap split split-center">
@@ -34,14 +36,17 @@
 <section class="section" aria-labelledby="why-title">
   <div class="wrap">
     <h2 id="why-title" class="section-title"><?= e(t('why_title')) ?></h2>
-    <ul class="reasons">
+    <div class="sheet">
+      <span class="reg reg-a" aria-hidden="true"><?= icon('regmark') ?></span>
+      <ul class="reasons">
 <?php foreach (t('reasons') as $i => [$h, $p]): ?>
-      <li class="reason">
-        <h3><span class="reason-mark"><?= icon($icons[$i]) ?></span><?= e($h) ?></h3>
-        <p><?= e($p) ?></p>
-      </li>
+        <li class="reason">
+          <h3><?= icon('cube') ?><?= e($h) ?></h3>
+          <p><?= e($p) ?></p>
+        </li>
 <?php endforeach; ?>
-    </ul>
+      </ul>
+    </div>
   </div>
 </section>
 
