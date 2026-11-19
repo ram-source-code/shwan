@@ -112,6 +112,7 @@ if ($og['path'] === '') $og['path'] = '/';
         <img src="<?= e(asset('assets/img/logo-dark-100.webp')) ?>" srcset="<?= e(asset('assets/img/logo-dark-200.webp')) ?> 2x" width="100" height="74" alt="<?= e(t('home_link')) ?>">
       </picture>
     </a>
+    <p class="nav-tagline" aria-hidden="true"><?= e(t('tagline')) ?></p>
     <nav class="site-nav" aria-label="<?= e(t('menu')) ?>">
       <button class="menu-button" type="button" popovertarget="site-menu" popovertargetaction="toggle" aria-controls="site-menu">
         <?= icon('menu') ?><span><?= e(t('menu')) ?></span>
