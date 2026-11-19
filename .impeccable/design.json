@@ -479,9 +479,9 @@
       "name": "Framed Plate with Registration Marks",
       "kind": "custom",
       "refersTo": "plate",
-      "description": "Photo printed into a framed paper plate; registration marks overlap the frame; team/training images multiply, founder does not.",
+      "description": "Photo printed into a framed paper plate; registration marks overlap the frame; all photos print in natural colour.",
       "html": "<figure class=\"ds-plate\"><span class=\"ds-reg ds-reg-a\"><svg class=\"ds-icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.25\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"6\"/><path d=\"M12 1v22M1 12h22\"/></svg></span><span class=\"ds-reg ds-reg-b\"><svg class=\"ds-icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.25\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"6\"/><path d=\"M12 1v22M1 12h22\"/></svg></span><div class=\"ds-photo\"></div><figcaption><strong dir=\"ltr\">Name Surname</strong>Role</figcaption></figure>",
-      "css": ".ds-plate{position:relative;margin:1rem;inline-size:16rem;padding:.75rem;border:2px solid var(--frame,#0c3f68);border-radius:4px;background:var(--paper,#eef3f8)}.ds-photo{aspect-ratio:370/480;border-radius:2px;background:linear-gradient(#0c3f68,#0c3f68) center/60% 70% no-repeat,#f7941e;mix-blend-mode:multiply}.ds-reg{position:absolute;inline-size:1.25rem;block-size:1.25rem;color:var(--frame,#0c3f68)}.ds-reg svg{inline-size:100%;block-size:100%}.ds-reg-a{inset-block-start:-.7rem;inset-inline-end:-.7rem}.ds-reg-b{inset-block-end:35%;inset-inline-start:-.7rem}.ds-plate figcaption{position:absolute;inset-inline-start:-2px;inset-block-end:1.25rem;display:flex;flex-direction:column;padding:.6rem .9rem;border:2px solid var(--frame,#0c3f68);border-radius:4px;background:#fff;font:400 .9rem/1.35 Figtree,sans-serif;color:#475a6d}.ds-plate strong{color:#0c3f68;font-size:1rem}"
+      "css": ".ds-plate{position:relative;margin:1rem;inline-size:16rem;padding:.75rem;border:2px solid var(--frame,#0c3f68);border-radius:4px;background:var(--paper,#eef3f8)}.ds-photo{aspect-ratio:370/480;border-radius:2px;background:linear-gradient(#0c3f68,#0c3f68) center/60% 70% no-repeat,#f7941e}.ds-reg{position:absolute;inline-size:1.25rem;block-size:1.25rem;color:var(--frame,#0c3f68)}.ds-reg svg{inline-size:100%;block-size:100%}.ds-reg-a{inset-block-start:-.7rem;inset-inline-end:-.7rem}.ds-reg-b{inset-block-end:35%;inset-inline-start:-.7rem}.ds-plate figcaption{position:absolute;inset-inline-start:-2px;inset-block-end:1.25rem;display:flex;flex-direction:column;padding:.6rem .9rem;border:2px solid var(--frame,#0c3f68);border-radius:4px;background:#fff;font:400 .9rem/1.35 Figtree,sans-serif;color:#475a6d}.ds-plate strong{color:#0c3f68;font-size:1rem}"
     },
     {
       "name": "Contact Channel",
@@ -508,7 +508,7 @@
       "Every container is a closed four-sided frame (2px) with a 4px corner.",
       "Registration marks and the logo-derived cube ornament are the only decoration.",
       "Each script gets its own type pair and its own line height; Arabic-script text is never letter-spaced.",
-      "Real photography only, printed as navy-and-orange duotones inside framed plates.",
+      "Real photography only, printed as natural-colour photos inside framed plates.",
       "Flat: the one blurred shadow in the system belongs to the floating menu."
     ],
     "rules": [
@@ -554,7 +554,7 @@
       },
       {
         "name": "The Overprint Rule",
-        "body": "Team and training photos are navy/orange duotones on a light paper plate with `mix-blend-mode: multiply`, so the ink prints into the paper in both themes. The founder portrait is not multiplied: it is a cut-out duotone standing in front of a solid orange disc inside its framed plate.",
+        "body": "Team and training photos are natural-colour photos on a light paper plate in both themes; people are never recoloured. The founder portrait is not multiplied: it is a cut-out natural-colour photo standing in front of a solid orange disc inside its framed plate.",
         "section": "elevation"
       },
       {
@@ -570,7 +570,7 @@
       "Do set Kurdish and Arabic in Noto Kufi Arabic + Vazirmatn with line height 1.85 and no letter-spacing.",
       "Do write layout in logical properties and mirror only directional arrows in RTL.",
       "Do render digits as Eastern Arabic in ckb/ar and wrap every phone number in `<bdo dir=\"ltr\">`.",
-      "Do print photos as duotones in framed plates, with multiply overprint on team and training plates but not on the founder portrait.",
+      "Do print photos as natural-colour photo in framed plates, with clean print on team and training plates but not on the founder portrait.",
       "Do separate sections with tinted bands, ornament rows and space.",
       "Do label every fact and source every claim from real company information."
     ],

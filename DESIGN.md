@@ -151,7 +151,7 @@ Kurdish (Sorani, `ckb`) is the default language and is RTL, as is Arabic; Englis
 - Every container is a closed four-sided frame (2px) with a 4px corner.
 - Registration marks and the logo-derived cube ornament are the only decoration.
 - Each script gets its own type pair and its own line height; Arabic-script text is never letter-spaced.
-- Real photography only, printed as navy-and-orange duotones inside framed plates.
+- Real photography only, in full natural colour, inside framed plates. People's faces are never recoloured.
 - Flat: the one blurred shadow in the system belongs to the floating menu.
 
 ## Colors
@@ -180,7 +180,7 @@ Two printing inks and their grounds; the dark theme swaps white stock for the in
 - **Dark Stock** (`stock-dark`, `stock-tint-dark`): dark page ground and its tint band.
 - **Dark Ink Set** (`heading-dark`, `body-text-dark`, `muted-text-dark`): headings, body and muted text on the dark plate.
 - **Dark Frames** (`frame-dark`, `frame-soft-dark`): frames lighten to a pale navy so the box still draws in dark mode.
-- **Dark Paper** (`paper-dark`): photo plates keep a light paper ground in dark mode so the multiply overprint still prints.
+- **Dark Paper** (`paper-dark`): photo plates keep a light paper ground in dark mode, so the photos read as prints on the dark wall.
 
 ### Named Rules
 **The Two Inks Rule.** Only navy and orange are inks. Any new colour must be a tint of the stock, a shade of one ink, or an overprint of the two. No third hue, no gradients.
@@ -232,7 +232,7 @@ Flat by construction. Depth is printed, not lit: a plate of solid ink sits behin
 ### Named Rules
 **The Printed Not Lit Rule.** No other blurred drop shadows. If something needs to stand forward, put it on a plate of ink or inside a frame.
 
-**The Overprint Rule.** Team and training photos are navy/orange duotones on a light paper plate with `mix-blend-mode: multiply`, so the ink prints into the paper in both themes. The founder portrait is not multiplied: it is a cut-out duotone standing in front of a solid orange disc inside its framed plate.
+**The True Colour Rule.** Photos of the real team and office print in their own colours. Tinting people navy or orange (duotone, multiply overprint) was tried and rejected: it bleached the founder's face and made the team look cold. The press world lives in the frames, marks, type and ornaments, not on faces.
 
 ## Shapes
 
@@ -292,7 +292,7 @@ Language changes run a cross-document view transition: the page fades and the he
 - **Do** set Kurdish and Arabic in Noto Kufi Arabic + Vazirmatn with line height 1.85 and no letter-spacing.
 - **Do** write layout in logical properties and mirror only directional arrows in RTL.
 - **Do** render digits as Eastern Arabic in ckb/ar and wrap every phone number in `<bdo dir="ltr">`.
-- **Do** print photos as duotones in framed plates, with multiply overprint on team and training plates but not on the founder portrait.
+- **Do** print photos in natural colour inside framed plates; flat backgrounds may be matched to `#e4ecf3` paper (as on Shwan's and Arya's cards).
 - **Do** separate sections with tinted bands, ornament rows and space.
 - **Do** label every fact and source every claim from real company information.
 

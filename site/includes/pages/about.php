@@ -16,7 +16,7 @@
     </div>
     <figure class="plate">
       <span class="reg reg-a" aria-hidden="true"><?= icon('regmark') ?></span>
-      <?= picture('training-duo', [400], 400, 440, t('training_alt'), '(min-width: 46rem) 25rem, 90vw', false, 'plate-photo') ?>
+      <?= picture('training-room', [400], 400, 440, t('training_alt'), '(min-width: 46rem) 25rem, 90vw', false, 'plate-photo') ?>
     </figure>
   </div>
 </section>

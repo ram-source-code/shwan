@@ -164,7 +164,7 @@ Forms, rate limit, honeypot, CSRF, sessions, login, uploads, payments, SQLite/My
 - The training-room photo is only 400 px wide (the original is small). A larger original would look sharper on retina screens.
 
 ## Redesign (19 Nov 2026)
-- Removed every theme stock photo. Replaced them with design made for this site: duotone prints of the real photos, framed plates, registration marks, a cube-and-S ornament band and a trilingual "proof sheet". The proof sheet is real HTML text in all three scripts, not an image.
+- Removed every theme stock photo. Replaced them with design made for this site: the real photos in natural colour, framed plates, registration marks, a cube-and-S ornament band and a trilingual "proof sheet". The proof sheet is real HTML text in all three scripts, not an image.
 - Added three languages with hreflang, a trilingual sitemap and trilingual error pages.
 - Added the theme switch.
 - Results: Lighthouse mobile perf 99–100, a11y/BP/SEO 100 (6 URLs, 3 languages); Nu HTML 0 errors; detector 0 findings; 0 overflow and 0 console/CSP errors across 3 languages × 3 widths × light/dark.

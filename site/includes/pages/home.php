@@ -11,7 +11,7 @@
     <figure class="hero-figure">
       <span class="reg reg-a" aria-hidden="true"><?= icon('regmark') ?></span>
       <span class="reg reg-b" aria-hidden="true"><?= icon('regmark') ?></span>
-      <?= picture('founder-duo', [480, 720, 960], 960, 1042, sprintf(t('portrait_of'), 'Shwan Baglama'), '(min-width: 64rem) 30rem, (min-width: 46rem) 42vw, 19rem', true, 'hero-photo') ?>
+      <?= picture('founder-cutout', [480, 720, 960], 960, 1042, sprintf(t('portrait_of'), 'Shwan Baglama'), '(min-width: 64rem) 30rem, (min-width: 46rem) 42vw, 19rem', true, 'hero-photo') ?>
       <figcaption><strong translate="no" dir="ltr">Shwan Baglama</strong><?= e(t('founder_role')) ?></figcaption>
     </figure>
   </div>
@@ -28,7 +28,7 @@
       <p><a class="link-arrow" href="<?= e(lurl('/about')) ?>"><?= e(t('more_about')) ?><?= icon('arrow-right') ?></a></p>
     </div>
     <figure class="plate">
-      <?= picture('training-duo', [400], 400, 440, t('training_alt'), '(min-width: 46rem) 25rem, 90vw', false, 'plate-photo') ?>
+      <?= picture('training-room', [400], 400, 440, t('training_alt'), '(min-width: 46rem) 25rem, 90vw', false, 'plate-photo') ?>
     </figure>
   </div>
 </section>

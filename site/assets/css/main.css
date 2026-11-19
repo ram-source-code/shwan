@@ -303,7 +303,7 @@ bdi { unicode-bidi: isolate; }
 .proof-panel:lang(en) .proof-text { font-family: "Archivo", sans-serif; letter-spacing: -0.015em; }
 
 .plate { position: relative; margin: 0; justify-self: center; inline-size: min(100%, 25rem); padding: 0.75rem; border: 2px solid var(--frame); border-radius: var(--radius); background: var(--paper); }
-.plate img { inline-size: 100%; border-radius: 2px; mix-blend-mode: multiply; }
+.plate img { inline-size: 100%; border-radius: 2px; }
 
 .sheet { position: relative; padding: clamp(1.5rem, 1rem + 3vw, 3.5rem); border: 2px solid var(--frame); border-radius: var(--radius); background: var(--bg); }
 .reasons { list-style: none; margin: 0; padding: 0; display: grid; gap: clamp(1.75rem, 1rem + 2vw, 3rem) clamp(1.5rem, 1rem + 3vw, 4rem); grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr)); }
@@ -315,7 +315,7 @@ bdi { unicode-bidi: isolate; }
 .member { display: flex; flex-direction: column; }
 .member-plate { padding: 0.5rem; border: 2px solid var(--frame); border-radius: var(--radius); background: var(--paper); margin-block-end: 0.9rem; }
 .member-photo { display: block; overflow: hidden; }
-.member-photo img { inline-size: 100%; aspect-ratio: 370 / 480; object-fit: cover; mix-blend-mode: multiply; transition: scale 0.5s var(--ease-out); }
+.member-photo img { inline-size: 100%; aspect-ratio: 370 / 480; object-fit: cover; transition: scale 0.5s var(--ease-out); }
 .member-name { font-size: var(--step-1); margin: 0 0 0.15rem; font-family: "Archivo", sans-serif; text-align: start; }
 [dir="rtl"] .member-name { text-align: end; }
 .member-role { color: var(--muted); margin: 0; font-weight: 600; }

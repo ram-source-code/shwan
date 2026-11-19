@@ -14,7 +14,7 @@
 | Archivo font | Omnibus-Type, via Fontsource 5.3.0 | — | OFL-1.1 |
 | Figtree font | Erik Kennedy, via Fontsource 5.3.0 | — | OFL-1.1 |
 | All text | Client copy from the old homepage; minor grammar and typo fixes ("help" → "helps", "travelshooting" → "troubleshooting", "Entrsoftgroup" → "Entersoftgroup") | — | Client-owned |
-| `founder-duo-*`, `duo-*-370`, `training-duo-400` | Navy/white duotone prints of the client's own photos above | Pillow (ImageOps.colorize) | Client-owned |
+| `team-arya-a-qadir-370` (updated) | Client's own photo; flat white background matched to the #e4ecf3 card paper | Pillow flood fill | Client-owned |
 | `logo-dark-*` | Client logo with the navy ink recoloured to near-white for dark mode | Pillow | Client-owned |
 | `logo-badge-*` | Old site `tile-gallery/icon.png` (round logo badge) | resized | Client-owned |
 | `ornament.svg`, registration mark, cube fleuron and theme icons in `icons.svg` | Developer, drawn for this site from the logo's cube-and-S mark | hand-written SVG | Made for this site |
