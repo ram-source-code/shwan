@@ -17,16 +17,24 @@ site/                       upload the CONTENTS of this folder to public_html/
     functions.php           e(), url(), abs_url(), asset(), picture(), route(), load_env(), og_tags()
     routes.php              every URL: / /about /team /contact
     redirects.php           old *.html URLs → 301 to the new page, or 410 for removed theme demo pages
-    content.php             ALL site text, phone, email, address, team, skills  ← edit content here
+    content.php             phone, email, links, team names, numbers (language-neutral)
+    lang/ckb.php en.php ar.php   ALL visible text per language  ← edit wording here
     pages/                  home, about, team, contact
     partials/               layout (head/header/footer), contact buttons, team grid, quote band
     errors/                 403 404 405 410 429 500 503
   data/                     blocked; PHP writes php-error.log here; maintenance.flag goes here
 ```
 
+## Languages and theme
+
+- Kurdish Sorani is the default at `/`, English is at `/en/` and Arabic is at `/ar/`. Each page links its two other versions (`hreflang`), and the switcher in the top strip keeps the visitor on the same page.
+- Old `*.html` URLs from the previous English site redirect to the matching `/en/` page.
+- The theme switch (Auto / Light / Dark) is stored in `localStorage` key `esg-theme` only when the visitor picks Light or Dark. Auto follows the device. With JS off the site follows the device and the switch is hidden.
+- Fonts: Archivo + Figtree for Latin; Noto Kufi Arabic (headings, subset) + Vazirmatn (body) for Kurdish/Arabic. **If you add Kurdish/Arabic text with new letters, re-run the Kufi subset** (see CREDITS.md) or those letters will fall back to Vazirmatn.
+
 ## Where content lives
 
-All words, numbers and contact details are in `includes/content.php`. Page titles and descriptions are at the bottom of each `includes/pages/*.php`. Team photos: `assets/img/team-<name>-370.{webp,avif}` (370×480).
+All wording is in `includes/lang/{ckb,en,ar}.php` (one file per language, same keys). Phone, email, team names and numbers are in `includes/content.php`. Page titles and descriptions are at the bottom of each `includes/pages/*.php`. Team photos: `assets/img/team-<name>-370.{webp,avif}` (370×480).
 
 To replace a photo: export 370×480 WebP and AVIF with the same name. Then add the new file to `CREDITS.md`.
 

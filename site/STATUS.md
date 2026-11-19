@@ -11,12 +11,12 @@ Host: Hostinger, LiteSpeed, PHP 8.4. The code uses only syntax both versions run
 | site_type | business_site | old site |
 | goal | Call / WhatsApp / email Entersoftgroup | assumed from old site |
 | audience | Suli businesses, mostly on phones | assumed |
-| languages | [en] | **confirmed** |
+| languages | [ckb (Sorani, RTL, default at /), en (/en/), ar (RTL, /ar/)] | **confirmed** (19 Nov) |
 | pages | / · /about · /team · /contact (+ 301/410 for old URLs) | confirmed: "remake what is there"; the old site only had real content on its homepage |
 | database | none | **confirmed** (links only, no form) |
 | admin_area | no | assumed (Rule 1) |
 | file_layout | multi-file | assumed |
-| visual_direction | Category standard ("Standard IT company site"), chosen in the Impeccable direction round | **confirmed** |
+| visual_direction | "Suli trilingual press": the assigned direction from a fresh Impeccable roll (seed:62f07d29bd8e264a) | **confirmed** (19 Nov redesign) |
 | brand | logo navy #0c3f68 + orange #f7941e; real team photos | old site |
 | artwork | client photos from the old site; no generation available | — |
 | hosting / php_version | Hostinger, PHP 8.4 | **confirmed** |
@@ -86,9 +86,13 @@ Forms, rate limit, honeypot, CSRF, sessions, login, uploads, payments, SQLite/My
 | D7-targets | Targets ≥ 24 px (44 primary) | buttons ≥ 48 px, links ≥ 44 px | computed styles | — | ✅ | ✅ |
 | D7-zoom | 200% / reflow at 320 px | intrinsic grids | Playwright 320 px; root font 200% | 0 overflow | 0 on all pages (after the contact-grid fix) | ✅ |
 | D7-motion | reduced motion; `color-scheme` meta | CSS | — | — | `light` only (true support) | ✅ |
-| D7-dark | Dark mode | — | — | — | REC: the raster logo is made for a white ground | N/A |
+| D7-dark | Dark mode + Auto/Light/Dark switch (default Auto, stored only on change) | main.css tokens, layout.php early script, main.js | Playwright: device dark first visit; choose Light; next page; back to Auto; JS off | none / light persisted / persisted / cleared / switch hidden | all as expected | ✅ |
 | D7-print | Print stylesheet | `@media print` | — | — | basic | ✅ |
-| D7a | Kurdish, bilingual | — | — | — | English only (confirmed) | N/A |
+| D7a-urls | One URL per language, hreflang ckb/en/ar + x-default, switcher to the same page, no auto-redirect | index.php prefix routing, layout.php hreflang + `.lang-switch` | curl `/`, `/en`, `/ar`, `/ckb/about`, `/en/` | 200 / 200 / 200 / 301→/about / 301→/en | ✅ (Playwright: switch on /ar → /en) | ✅ |
+| D7a-rtl | dir=rtl, mirrored arrows only, logical properties, no letter-spacing on ckb/ar, line-height 1.85 | main.css `:lang(ckb)`, `[dir=rtl] .link-arrow .icon` | screenshots `light-ckb-*`, `light-ar-*` | mirrored layout | reviewed in renders | ✅ |
+| D7a-digits | One digit system per language: Eastern Arabic in ckb/ar, Latin in en; phone forced LTR with `<bdo dir=ltr>` | `num()`, `phone_local()` | zoomed capture of the Call button in ckb/ar | `٠٧٧٠ ١٥٥ ٨٧٩٦` in the right order | z-actions captures | ✅ |
+| D7a-font | Kurdish letters ڕ ڵ ۆ ێ ە ڤ پ چ ژ گ covered | Vazirmatn + Noto Kufi (subset) | fonttools cmap check | none missing | `missing: none` for both | ✅ |
+| D7a-review | Native-speaker review of ckb/ar text | lang/ckb.php, lang/ar.php | a native speaker reads every page | approved wording | — | DEV |
 | D7a-phone | Phone display / tel / wa.me | `iraq_mobile_local()`, `tel:+9647701558796`, `wa.me/9647701558796`, `<span dir=ltr>` | view source | — | ✅ | ✅ |
 | D8-meta | Unique title, description, canonical, h1 | page meta arrays | curl 4 pages | unique | 4 different titles and descriptions; Lighthouse SEO 100 ×4 | ✅ |
 | D8-sitemap | sitemap.xml with loc + lastmod | `/sitemap.xml` route (`pages/sitemap.php`), from abs_url + file mtimes | curl | 200 | 4 URLs, lastmod 2026-11-18 | ✅ |
@@ -158,3 +162,9 @@ Forms, rate limit, honeypot, CSRF, sessions, login, uploads, payments, SQLite/My
 
 - The old site's "Different languages" claim suggests a Kurdish/Arabic version of this site later. The structure supports adding one; that requires D7a.
 - The training-room photo is only 400 px wide (the original is small). A larger original would look sharper on retina screens.
+
+## Redesign (19 Nov 2026)
+- Removed every theme stock photo. Replaced them with design made for this site: the real photos in natural colour, framed plates, registration marks, a cube-and-S ornament band and a trilingual "proof sheet". The proof sheet is real HTML text in all three scripts, not an image.
+- Added three languages with hreflang, a trilingual sitemap and trilingual error pages.
+- Added the theme switch.
+- Results: Lighthouse mobile perf 99–100, a11y/BP/SEO 100 (6 URLs, 3 languages); Nu HTML 0 errors; detector 0 findings; 0 overflow and 0 console/CSP errors across 3 languages × 3 widths × light/dark.

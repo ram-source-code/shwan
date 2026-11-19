@@ -1,79 +1,66 @@
-<?php
-$r = $site['reasons'];
-?>
+<?php $icons = $site['icons']; ?>
 <section class="hero" aria-labelledby="hero-title">
   <div class="wrap hero-grid">
     <div class="hero-copy">
-      <h1 id="hero-title"><?= e($site['hero']['title']) ?></h1>
-      <p class="hero-lead"><?= e($site['hero']['intro']) ?></p>
+      <h1 id="hero-title"><?= e(t('hero_title')) ?></h1>
+<?php require ROOT . '/includes/partials/headline-strip.php'; ?>
+      <p class="hero-lead"><?= tx(t('hero_intro')) ?></p>
 <?php require ROOT . '/includes/partials/contact-actions.php'; ?>
-      <dl class="facts">
-<?php foreach ($site['facts'] as $f): ?>
-        <div class="fact"><dt><?= e($f['label']) ?></dt><dd><?= e($f['value']) ?><span><?= e($f['suffix']) ?></span></dd></div>
-<?php endforeach; ?>
-      </dl>
+<?php require ROOT . '/includes/partials/facts.php'; ?>
     </div>
     <figure class="hero-figure">
-      <?= picture('founder-cutout', [480, 720, 960], 960, 1042, 'Shwan Baglama, founder and CEO of Entersoftgroup', '(min-width: 64rem) 34rem, (min-width: 40rem) 60vw, 88vw', true, 'hero-photo') ?>
-      <figcaption><strong translate="no">Shwan Baglama</strong> Founder &amp; CEO</figcaption>
+      <span class="reg reg-a" aria-hidden="true"><?= icon('regmark') ?></span>
+      <span class="reg reg-b" aria-hidden="true"><?= icon('regmark') ?></span>
+      <?= picture('founder-cutout', [480, 720, 960], 960, 1042, sprintf(t('portrait_of'), 'Shwan Baglama'), '(min-width: 64rem) 30rem, (min-width: 46rem) 42vw, 19rem', true, 'hero-photo') ?>
+      <figcaption><strong translate="no" dir="ltr">Shwan Baglama</strong><?= e(t('founder_role')) ?></figcaption>
     </figure>
   </div>
 </section>
 
-<section class="section about-intro" aria-labelledby="about-title">
+<?php require ROOT . '/includes/partials/proof.php'; ?>
+<div class="ornament ornament-section" aria-hidden="true"></div>
+
+<section class="section section-tint" aria-labelledby="about-title">
   <div class="wrap split split-center">
     <div class="prose">
-      <h2 id="about-title">About us</h2>
-      <p><?= e($site['about']) ?></p>
-      <p><a class="link-arrow" href="<?= e(url('/about')) ?>">More about us<?= icon('arrow-right') ?></a></p>
+      <h2 id="about-title"><?= e(t('about_title')) ?></h2>
+      <p><?= e(t('about')) ?></p>
+      <p><a class="link-arrow" href="<?= e(lurl('/about')) ?>"><?= e(t('more_about')) ?><?= icon('arrow-right') ?></a></p>
     </div>
-    <?= illus('work-desk', [800, 1200], 1200, 625, 'A man at a desk waving at a video call on his computer', '(min-width: 46rem) 36rem, 92vw', 'illus-wide') ?>
+    <figure class="plate">
+      <?= picture('training-room', [400], 400, 440, t('training_alt'), '(min-width: 46rem) 25rem, 90vw', false, 'plate-photo') ?>
+    </figure>
   </div>
 </section>
 
-<section class="section section-tint" aria-labelledby="why-title">
+<section class="section" aria-labelledby="why-title">
   <div class="wrap">
-    <div class="why-grid">
-    <div class="why-side">
-      <h2 id="why-title">Why choose us</h2>
-      <?= illus('feature-portrait', [569], 569, 698, 'A smiling man in a black T-shirt in front of an orange circle', '(min-width: 64rem) 22rem, (min-width: 46rem) 30vw, 70vw', 'illus-cutout') ?>
-    </div>
-    <ul class="reasons">
-<?php foreach ($r as $item): ?>
-      <li class="reason">
-        <h3><?= icon($item['icon']) ?><?= e($item['title']) ?></h3>
-        <p><?= e($item['text']) ?></p>
-      </li>
+    <h2 id="why-title" class="section-title"><?= e(t('why_title')) ?></h2>
+    <div class="sheet">
+      <span class="reg reg-a" aria-hidden="true"><?= icon('regmark') ?></span>
+      <ul class="reasons">
+<?php foreach (t('reasons') as $i => [$h, $p]): ?>
+        <li class="reason">
+          <h3><?= icon('cube') ?><?= e($h) ?></h3>
+          <p><?= e($p) ?></p>
+        </li>
 <?php endforeach; ?>
-    </ul>
+      </ul>
     </div>
   </div>
 </section>
 
-<section class="section" aria-labelledby="team-title">
+<section class="section section-tint" aria-labelledby="team-title">
   <div class="wrap">
-    <div class="section-head section-head-row">
-      <h2 id="team-title">Our team</h2>
-      <a class="link-arrow" href="<?= e(url('/team')) ?>">Meet the team<?= icon('arrow-right') ?></a>
+    <div class="section-head-row">
+      <h2 id="team-title" class="section-title"><?= e(t('team_title')) ?></h2>
+      <a class="link-arrow" href="<?= e(lurl('/team')) ?>"><?= e(t('meet_team')) ?><?= icon('arrow-right') ?></a>
     </div>
 <?php require ROOT . '/includes/partials/team-grid.php'; ?>
   </div>
 </section>
 
-<div class="photo-band wrap">
-  <div class="photo-grid">
-<?php foreach ([1, 2, 5, 3, 4, 6, 7, 8] as $g): ?>
-    <?= picture("gallery-$g", [$g === 5 ? 770 : 370], $g === 5 ? 770 : 370, $g === 5 ? 370 : ($g > 5 ? 235 : 370), '', ($g === 5 ? '(min-width: 46rem) 50vw, 100vw' : '(min-width: 46rem) 25vw, 50vw'), false, 'photo-tile photo-tile-' . $g) ?>
-<?php endforeach; ?>
-    <?= picture('portrait-round', [140], 140, 140, '', '7rem', false, 'photo-tile photo-tile-round') ?>
-  </div>
-  <p class="photo-note">Illustrative stock photography.</p>
-</div>
-
 <?php require ROOT . '/includes/partials/quote-band.php'; ?>
 <?php
-return [
-    'title' => 'Entersoftgroup | Software & IT company in Sulaymaniyah',
-    'description' => 'Entersoftgroup is a software and IT company in Sulaymaniyah with 15+ years of experience. Software in Kurdish, Arabic and English, customized to your business, with 24/7 support.',
-    'path' => '/',
-];
+[$mt, $md] = t('meta')['home'];
+return ['title' => $mt, 'description' => $md, 'path' => '/'];

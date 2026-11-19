@@ -1,49 +1,376 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-18T20:49:59.318537+00:00",
+  "generatedAt": "2026-11-19T12:58:22.024500+00:00",
   "title": "Design System: Entersoftgroup",
   "extensions": {
     "colorMeta": {
-      "brand-navy": {
+      "ink-navy": {
         "role": "primary",
-        "displayName": "Brand Navy"
+        "displayName": "Logo Navy Ink",
+        "tonalRamp": [
+          "#152838",
+          "#1c4463",
+          "#1f6093",
+          "#1c82d3",
+          "#52a1e0",
+          "#8ebce1",
+          "#c3d8e9",
+          "#eef3f7"
+        ]
       },
-      "brand-orange": {
+      "navy-deep": {
+        "role": "primary",
+        "displayName": "Deep Navy",
+        "tonalRamp": [
+          "#142838",
+          "#1c4364",
+          "#1e5f94",
+          "#1b80d5",
+          "#51a0e1",
+          "#8dbbe2",
+          "#c3d8ea",
+          "#eef3f7"
+        ]
+      },
+      "navy-ink": {
+        "role": "primary",
+        "displayName": "Navy Ink Black",
+        "tonalRamp": [
+          "#192734",
+          "#24405b",
+          "#2c5a86",
+          "#317abf",
+          "#629ad0",
+          "#97b8d8",
+          "#c7d7e5",
+          "#eff2f6"
+        ]
+      },
+      "ink-orange": {
         "role": "secondary",
-        "displayName": "Brand Orange"
+        "displayName": "Logo Orange Ink",
+        "tonalRamp": [
+          "#3b2812",
+          "#694316",
+          "#9d5f15",
+          "#e3810c",
+          "#eda045",
+          "#e9bc87",
+          "#edd8c0",
+          "#f8f3ed"
+        ]
       },
-      "ground": {
-        "role": "neutral",
-        "displayName": "Ground"
+      "orange-hover": {
+        "role": "secondary",
+        "displayName": "Orange Ink, Hover",
+        "tonalRamp": [
+          "#3c2810",
+          "#6c4313",
+          "#a25f10",
+          "#eb8004",
+          "#f39f3f",
+          "#ecbb83",
+          "#eed8be",
+          "#f8f3ec"
+        ]
       },
-      "tint": {
-        "role": "neutral",
-        "displayName": "Tint"
+      "orange-text": {
+        "role": "secondary",
+        "displayName": "Orange Text, Light",
+        "tonalRamp": [
+          "#3c2710",
+          "#6c4113",
+          "#a25b10",
+          "#eb7b04",
+          "#f39b3f",
+          "#ecb983",
+          "#eed7be",
+          "#f8f2ec"
+        ]
       },
-      "ink": {
+      "stock-white": {
         "role": "neutral",
-        "displayName": "Ink"
+        "displayName": "White Stock",
+        "tonalRamp": [
+          "#262626",
+          "#404040",
+          "#595959",
+          "#787878",
+          "#999999",
+          "#b8b8b8",
+          "#d6d6d6",
+          "#f2f2f2"
+        ]
       },
-      "muted": {
+      "stock-tint": {
         "role": "neutral",
-        "displayName": "Muted"
+        "displayName": "Tinted Stock",
+        "tonalRamp": [
+          "#1d262f",
+          "#2d4052",
+          "#3b5978",
+          "#4878a8",
+          "#7499be",
+          "#a2b8cd",
+          "#ccd6e0",
+          "#f0f2f5"
+        ]
+      },
+      "body-text": {
+        "role": "neutral",
+        "displayName": "Body Ink",
+        "tonalRamp": [
+          "#1d2630",
+          "#2c3f53",
+          "#395879",
+          "#4576aa",
+          "#7298c0",
+          "#a1b7cf",
+          "#ccd6e1",
+          "#f0f2f5"
+        ]
+      },
+      "muted-text": {
+        "role": "neutral",
+        "displayName": "Muted Ink",
+        "tonalRamp": [
+          "#22262b",
+          "#364049",
+          "#4a5969",
+          "#5f7890",
+          "#8699ac",
+          "#adb8c3",
+          "#d1d6db",
+          "#f1f2f3"
+        ]
+      },
+      "frame-soft": {
+        "role": "neutral",
+        "displayName": "Soft Frame",
+        "tonalRamp": [
+          "#20262d",
+          "#33404d",
+          "#44596f",
+          "#56789a",
+          "#7e99b4",
+          "#a8b8c7",
+          "#cfd6dd",
+          "#f1f2f4"
+        ]
+      },
+      "plate-muted": {
+        "role": "neutral",
+        "displayName": "Plate Muted",
+        "tonalRamp": [
+          "#1e272e",
+          "#2f4050",
+          "#3e5a74",
+          "#4d79a2",
+          "#789aba",
+          "#a4b8cb",
+          "#cdd7df",
+          "#f0f2f4"
+        ]
+      },
+      "photo-ground": {
+        "role": "neutral",
+        "displayName": "Photo Ground",
+        "tonalRamp": [
+          "#1e272f",
+          "#2f4151",
+          "#3d5b75",
+          "#4b7ba4",
+          "#769bbc",
+          "#a3b9cc",
+          "#cdd7df",
+          "#f0f2f5"
+        ]
+      },
+      "plate-dark": {
+        "role": "neutral",
+        "displayName": "Dark Plate",
+        "tonalRamp": [
+          "#182734",
+          "#23415c",
+          "#2b5b88",
+          "#2e7bc1",
+          "#609cd2",
+          "#96b9d9",
+          "#c7d7e6",
+          "#eff2f6"
+        ]
+      },
+      "stock-dark": {
+        "role": "neutral",
+        "displayName": "Dark Stock",
+        "tonalRamp": [
+          "#1a2733",
+          "#274259",
+          "#305c83",
+          "#377db9",
+          "#669dcc",
+          "#9abad5",
+          "#c9d7e4",
+          "#eff3f6"
+        ]
+      },
+      "stock-tint-dark": {
+        "role": "neutral",
+        "displayName": "Dark Tinted Stock",
+        "tonalRamp": [
+          "#1a2733",
+          "#274058",
+          "#315a82",
+          "#387ab8",
+          "#679acb",
+          "#9bb8d5",
+          "#c9d7e4",
+          "#eff2f5"
+        ]
+      },
+      "heading-dark": {
+        "role": "neutral",
+        "displayName": "Dark Heading Ink",
+        "tonalRamp": [
+          "#1c2630",
+          "#2c4054",
+          "#39597a",
+          "#4578ab",
+          "#7199c1",
+          "#a0b8cf",
+          "#cbd6e1",
+          "#f0f2f5"
+        ]
+      },
+      "body-text-dark": {
+        "role": "neutral",
+        "displayName": "Dark Body Ink",
+        "tonalRamp": [
+          "#1f272d",
+          "#32414e",
+          "#435b70",
+          "#547a9c",
+          "#7d9bb5",
+          "#a7b9c8",
+          "#cfd7de",
+          "#f0f2f4"
+        ]
+      },
+      "muted-text-dark": {
+        "role": "neutral",
+        "displayName": "Dark Muted Ink",
+        "tonalRamp": [
+          "#22262b",
+          "#364049",
+          "#4a5969",
+          "#5f7890",
+          "#8699ac",
+          "#acb8c3",
+          "#d1d6db",
+          "#f1f2f3"
+        ]
+      },
+      "frame-dark": {
+        "role": "neutral",
+        "displayName": "Dark Frame",
+        "tonalRamp": [
+          "#1d272f",
+          "#2e4052",
+          "#3c5a77",
+          "#4a79a6",
+          "#759abd",
+          "#a3b8cd",
+          "#cdd7e0",
+          "#f0f2f5"
+        ]
+      },
+      "frame-soft-dark": {
+        "role": "neutral",
+        "displayName": "Dark Soft Frame",
+        "tonalRamp": [
+          "#1e262f",
+          "#2f4050",
+          "#3e5a75",
+          "#4d79a3",
+          "#779abb",
+          "#a4b8cb",
+          "#cdd6df",
+          "#f0f2f4"
+        ]
+      },
+      "orange-text-dark": {
+        "role": "secondary",
+        "displayName": "Orange Text, Dark",
+        "tonalRamp": [
+          "#3b2912",
+          "#694417",
+          "#9d6116",
+          "#e2840e",
+          "#eca246",
+          "#e8bd87",
+          "#ecd9c0",
+          "#f8f3ed"
+        ]
+      },
+      "paper-dark": {
+        "role": "neutral",
+        "displayName": "Dark Paper",
+        "tonalRamp": [
+          "#1e262f",
+          "#2e4051",
+          "#3d5976",
+          "#4b78a5",
+          "#7699bc",
+          "#a3b8cc",
+          "#cdd6e0",
+          "#f0f2f5"
+        ]
       }
     },
     "typographyMeta": {
       "display": {
-        "displayName": "Display",
-        "purpose": "h1 only"
+        "displayName": "Latin Display",
+        "purpose": "Page headline in English; Archivo 850."
+      },
+      "display-arabic-script": {
+        "displayName": "Kurdish/Arabic Display",
+        "purpose": "Page headline in ckb/ar; Noto Kufi Arabic, no tracking, line height 1.45."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section titles; fact numerals at this size."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Reason headings, member names."
+      },
+      "proof": {
+        "displayName": "Proof",
+        "purpose": "Three-script claim on the proof sheet; 1.7 line height in Arabic script."
       },
       "body": {
-        "displayName": "Body",
-        "purpose": "Running text and UI"
+        "displayName": "Latin Body",
+        "purpose": "Running text in English; Figtree, 1.6."
+      },
+      "body-arabic-script": {
+        "displayName": "Kurdish/Arabic Body",
+        "purpose": "Running text in ckb/ar; Vazirmatn, 1.85, no letter-spacing."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Fact labels, channel names, proof chips, edition strip; sentence case."
       }
     },
     "shadows": [
       {
-        "name": "soft",
-        "value": "0 1px 2px rgb(12 63 104 / 0.06), 0 8px 24px -8px rgb(12 63 104 / 0.18)",
-        "purpose": "Floating surfaces: menu panel, caption chip, skills panel, hovered channel."
+        "name": "floating-menu",
+        "value": "0 1px 2px rgb(12 63 104 / 0.08), 0 10px 28px -12px rgb(12 63 104 / 0.3)",
+        "purpose": "Mobile menu popover only (light)."
+      },
+      {
+        "name": "floating-menu-dark",
+        "value": "0 1px 2px rgb(0 0 0 / 0.4), 0 10px 28px -12px rgb(0 0 0 / 0.7)",
+        "purpose": "Mobile menu popover only (dark)."
       }
     ],
     "motion": [
@@ -53,69 +380,209 @@
         "purpose": "All state transitions."
       },
       {
-        "name": "page",
-        "value": "cross-document view transition, 180ms out / 280ms in",
-        "purpose": "Page change; header stays put."
+        "name": "state",
+        "value": "0.2s",
+        "purpose": "Button, channel and menu transitions."
+      },
+      {
+        "name": "press-impression",
+        "value": "0.45s view transition: scale 1.04 to 0.995 to 1, fade in",
+        "purpose": "Headline re-ink on language change; off under reduced motion."
       }
     ],
     "breakpoints": [
       {
-        "name": "two-col",
+        "name": "xs",
+        "value": "30rem"
+      },
+      {
+        "name": "sm",
+        "value": "36rem"
+      },
+      {
+        "name": "md",
         "value": "46rem"
       },
       {
-        "name": "wide",
+        "name": "lg",
         "value": "56rem"
+      },
+      {
+        "name": "xl",
+        "value": "64rem"
       }
-    ]
+    ],
+    "themes": {
+      "default": "auto",
+      "modes": [
+        "auto",
+        "light",
+        "dark"
+      ],
+      "selectors": {
+        "light": ":root",
+        "auto-dark": "@media (prefers-color-scheme: dark) :root:not([data-theme=\"light\"])",
+        "dark": ":root[data-theme=\"dark\"]"
+      }
+    }
   },
   "components": [
     {
-      "name": "Primary Button",
+      "name": "Primary Button (Call)",
       "kind": "button",
       "refersTo": "button-primary",
-      "description": "Main call to action (Call).",
-      "html": "<a class=\"ds-btn\" href=\"#\">Call 0770 155 8796</a>",
-      "css": ".ds-btn{display:inline-flex;align-items:center;min-height:3rem;padding:.65rem 1.3rem;border-radius:999px;background:#0c3f68;color:#fff;font:650 1rem/1.2 Figtree,sans-serif;text-decoration:none}.ds-btn:hover{background:#082c4a}"
+      "description": "Navy ink stamp for the main action; orange ink in dark mode. Phone number set LTR.",
+      "html": "<a class=\"ds-btn ds-btn-primary\" href=\"#\"><svg class=\"ds-icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 3.5h3.2l1.6 4.2-2.1 1.3a11 11 0 0 0 7.3 7.3l1.3-2.1 4.2 1.6V19a1.5 1.5 0 0 1-1.6 1.5A16.5 16.5 0 0 1 3.5 5.1 1.5 1.5 0 0 1 5 3.5Z\"/></svg>Call <bdo dir=\"ltr\">0750 000 0000</bdo></a>",
+      "css": ".ds-icon{inline-size:1.15em;block-size:1.15em;flex:none}.ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:.55em;min-block-size:3rem;padding:.65rem 1.35rem;border:2px solid transparent;border-radius:var(--radius,4px);font:700 1rem/1.2 Figtree,\"Segoe UI\",sans-serif;text-decoration:none;cursor:pointer;white-space:nowrap;transition:background-color .2s cubic-bezier(.16,1,.3,1),translate .2s cubic-bezier(.16,1,.3,1);}.ds-btn-primary{background:var(--btn-bg,#0c3f68);color:var(--btn-fg,#fff)}.ds-btn-primary:hover{background:var(--btn-hover,#082c4a);translate:0 -1px}.ds-btn-primary:active{translate:0 1px}.ds-btn:focus-visible{outline:3px solid var(--focus,#0c3f68);outline-offset:3px;}"
+    },
+    {
+      "name": "Secondary Button (WhatsApp)",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Framed transparent button for the second action.",
+      "html": "<a class=\"ds-btn ds-btn-secondary\" href=\"#\"><svg class=\"ds-icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M4 5h16v11H9l-5 4Z\"/></svg>WhatsApp</a>",
+      "css": ".ds-icon{inline-size:1.15em;block-size:1.15em;flex:none}.ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:.55em;min-block-size:3rem;padding:.65rem 1.35rem;border:2px solid transparent;border-radius:var(--radius,4px);font:700 1rem/1.2 Figtree,\"Segoe UI\",sans-serif;text-decoration:none;cursor:pointer;white-space:nowrap;transition:background-color .2s cubic-bezier(.16,1,.3,1),translate .2s cubic-bezier(.16,1,.3,1);}.ds-btn-secondary{background:transparent;color:var(--heading,#0c3f68);border-color:var(--frame,#0c3f68)}.ds-btn-secondary:hover{background:var(--bg-2,#eef3f8);translate:0 -1px}.ds-btn:focus-visible{outline:3px solid var(--focus,#0c3f68);outline-offset:3px;}"
+    },
+    {
+      "name": "Plate Button Pair",
+      "kind": "button",
+      "refersTo": "button-accent",
+      "description": "On a navy plate: orange accent plus inverse ghost.",
+      "html": "<div class=\"ds-plate-bg\"><a class=\"ds-btn ds-btn-accent\" href=\"#\"><svg class=\"ds-icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 3.5h3.2l1.6 4.2-2.1 1.3a11 11 0 0 0 7.3 7.3l1.3-2.1 4.2 1.6V19a1.5 1.5 0 0 1-1.6 1.5A16.5 16.5 0 0 1 3.5 5.1 1.5 1.5 0 0 1 5 3.5Z\"/></svg>Call</a> <a class=\"ds-btn ds-btn-ghost\" href=\"#\"><svg class=\"ds-icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M4 5h16v11H9l-5 4Z\"/></svg>WhatsApp</a></div>",
+      "css": ".ds-icon{inline-size:1.15em;block-size:1.15em;flex:none}.ds-plate-bg{background:#0c3f68;padding:1.5rem;display:flex;flex-wrap:wrap;gap:.85rem}.ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:.55em;min-block-size:3rem;padding:.65rem 1.35rem;border:2px solid transparent;border-radius:var(--radius,4px);font:700 1rem/1.2 Figtree,\"Segoe UI\",sans-serif;text-decoration:none;cursor:pointer;white-space:nowrap;transition:background-color .2s cubic-bezier(.16,1,.3,1),translate .2s cubic-bezier(.16,1,.3,1);}.ds-btn-accent{background:#f7941e;color:#0d2236}.ds-btn-accent:hover{background:#ffa53d}.ds-btn-ghost{color:#fff;border-color:#fff}.ds-btn-ghost:hover{background:rgb(255 255 255 / .1)}.ds-btn:focus-visible{outline:3px solid #f7941e;outline-offset:3px}"
+    },
+    {
+      "name": "Masthead (edition strip + framed nav box)",
+      "kind": "nav",
+      "refersTo": "edition-strip",
+      "description": "Navy edition strip with trilingual line, language and theme switches; framed nav box below.",
+      "html": "<header class=\"ds-mast\"><div class=\"ds-ed\"><span class=\"ds-ed-name\">Entersoftgroup</span><span class=\"ds-ed-line\" lang=\"ckb\" dir=\"rtl\"><svg class=\"ds-icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M12 2.5 20.5 7.3v9.4L12 21.5 3.5 16.7V7.3Z\"/><path d=\"M3.5 7.3 12 12l8.5-4.7M12 12v9.5\"/></svg>نەرمەکاڵا</span><span class=\"ds-ed-line\" lang=\"en\"><svg class=\"ds-icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M12 2.5 20.5 7.3v9.4L12 21.5 3.5 16.7V7.3Z\"/><path d=\"M3.5 7.3 12 12l8.5-4.7M12 12v9.5\"/></svg>Software</span><nav class=\"ds-langs\"><a aria-current=\"true\" lang=\"ckb\" href=\"#\">کوردی</a><a lang=\"en\" href=\"#\">English</a><a lang=\"ar\" href=\"#\">العربية</a></nav></div><div class=\"ds-navbox\"><strong class=\"ds-logo\">ESG</strong><nav class=\"ds-links\"><a href=\"#\" aria-current=\"page\">Home</a><a href=\"#\">About</a><a href=\"#\">Team</a><a href=\"#\">Contact</a></nav></div></header>",
+      "css": ".ds-icon{inline-size:1.15em;block-size:1.15em;flex:none}.ds-mast{background:#fff;padding-block-end:.5rem}.ds-ed{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem 1rem;background:var(--edition-bg,#0c3f68);color:var(--edition-fg,#fff);padding:.4rem 1rem;min-block-size:2.75rem;font:600 .9rem/1.3 Figtree,sans-serif}.ds-ed-name{font:800 1rem/1 Archivo,sans-serif;letter-spacing:-.01em}.ds-ed-line{display:inline-flex;gap:.4rem;align-items:center}.ds-ed-line .ds-icon{color:#f7941e;inline-size:.9rem;block-size:.9rem}.ds-ed-line[lang=ckb]{font-family:Vazirmatn,Tahoma,sans-serif}.ds-langs{display:flex;gap:.25rem;margin-inline-start:auto}.ds-langs a{display:inline-flex;align-items:center;min-block-size:2.25rem;padding:0 .7rem;color:inherit;text-decoration:none;border:1.5px solid transparent;border-radius:4px}.ds-langs a:hover{border-color:rgb(255 255 255 / .5)}.ds-langs a[aria-current]{background:#f7941e;color:#0d2236}.ds-langs a:focus-visible{outline:3px solid #f7941e;outline-offset:3px}.ds-navbox{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin:.5rem 1rem 0;padding:0 .75rem;min-block-size:4.25rem;border:2px solid var(--frame,#0c3f68);border-radius:4px;background:#fff}.ds-logo{font:850 1.4rem/1 Archivo,sans-serif;color:#0c3f68}.ds-links{display:flex;gap:.25rem}.ds-links a{display:flex;align-items:center;min-block-size:2.75rem;padding:0 .9rem;border-radius:4px;font:650 1rem/1 Figtree,sans-serif;color:#142333;text-decoration:none}.ds-links a:hover{background:#eef3f8}.ds-links a[aria-current]{background:#0c3f68;color:#fff}.ds-links a:focus-visible{outline:3px solid #0c3f68;outline-offset:3px}"
+    },
+    {
+      "name": "Fact Boxes",
+      "kind": "card",
+      "refersTo": "fact-box",
+      "description": "Framed numeral with its data label; native digits per language.",
+      "html": "<dl class=\"ds-facts\"><div class=\"ds-fact\"><dt>Years of experience</dt><dd>15<span>+</span></dd></div><div class=\"ds-fact\"><dt>Projects delivered</dt><dd>99<span>+</span></dd></div></dl>",
+      "css": ".ds-facts{display:flex;flex-wrap:wrap;gap:1rem;margin:0}.ds-fact{display:flex;flex-direction:column-reverse;justify-content:flex-end;flex:1 1 8rem;max-inline-size:15rem;padding:.9rem 1.1rem;border:2px solid var(--frame,#0c3f68);border-radius:4px;background:var(--bg,#fff)}.ds-fact dt{color:var(--muted,#475a6d);font:650 .9rem/1.35 Figtree,sans-serif}.ds-fact dd{margin:0;font:850 clamp(1.9rem,1.4rem + 2vw,3rem)/1 Archivo,sans-serif;color:var(--heading,#0c3f68);font-variant-numeric:tabular-nums}"
+    },
+    {
+      "name": "Proof Sheet",
+      "kind": "custom",
+      "refersTo": "proof-panel",
+      "description": "One claim set in three scripts; current language as the solid navy lead panel.",
+      "html": "<ol class=\"ds-proof\"><li class=\"ds-panel ds-lead\" lang=\"ckb\" dir=\"rtl\"><p class=\"ds-ptext\">نەرمەکاڵا بە کوردی، عەرەبی و ئینگلیزی</p><p class=\"ds-plabel\"><svg class=\"ds-icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.25\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"6\"/><path d=\"M12 1v22M1 12h22\"/></svg>کوردی</p></li><li class=\"ds-panel\" lang=\"en\"><p class=\"ds-ptext\">Software in Kurdish, Arabic and English</p><p class=\"ds-plabel\"><svg class=\"ds-icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.25\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"6\"/><path d=\"M12 1v22M1 12h22\"/></svg>English</p></li><li class=\"ds-panel\" lang=\"ar\" dir=\"rtl\"><p class=\"ds-ptext\">برمجيات بالكردية والعربية والإنجليزية</p><p class=\"ds-plabel\"><svg class=\"ds-icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.25\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"6\"/><path d=\"M12 1v22M1 12h22\"/></svg>العربية</p></li></ol>",
+      "css": ".ds-icon{inline-size:1.15em;block-size:1.15em;flex:none}.ds-proof{list-style:none;margin:0;padding:0;display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,14rem),1fr))}.ds-panel{padding:1.5rem;border:2px solid var(--frame,#0c3f68);border-radius:4px;background:#fff}.ds-lead{background:#0c3f68;border-color:#0c3f68}.ds-ptext{margin:0;font:750 1.5rem/1.4 Archivo,sans-serif;letter-spacing:-.015em;color:#0c3f68}.ds-panel[dir=rtl] .ds-ptext{font-family:\"Noto Kufi Arabic\",Tahoma,sans-serif;line-height:1.7;letter-spacing:0}.ds-lead .ds-ptext{color:#fff}.ds-plabel{display:inline-flex;align-items:center;gap:.45rem;margin:1.1rem 0 0;padding:.2rem .65rem;border:1.5px solid currentColor;border-radius:4px;font:700 .9rem/1.4 Figtree,sans-serif;color:#9a4f00}.ds-lead .ds-plabel{color:#f7941e}.ds-plabel .ds-icon{inline-size:1em;block-size:1em}"
+    },
+    {
+      "name": "Framed Plate with Registration Marks",
+      "kind": "custom",
+      "refersTo": "plate",
+      "description": "Photo printed into a framed paper plate; registration marks overlap the frame; all photos print in natural colour.",
+      "html": "<figure class=\"ds-plate\"><span class=\"ds-reg ds-reg-a\"><svg class=\"ds-icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.25\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"6\"/><path d=\"M12 1v22M1 12h22\"/></svg></span><span class=\"ds-reg ds-reg-b\"><svg class=\"ds-icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.25\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"6\"/><path d=\"M12 1v22M1 12h22\"/></svg></span><div class=\"ds-photo\"></div><figcaption><strong dir=\"ltr\">Name Surname</strong>Role</figcaption></figure>",
+      "css": ".ds-plate{position:relative;margin:1rem;inline-size:16rem;padding:.75rem;border:2px solid var(--frame,#0c3f68);border-radius:4px;background:var(--paper,#eef3f8)}.ds-photo{aspect-ratio:370/480;border-radius:2px;background:linear-gradient(#0c3f68,#0c3f68) center/60% 70% no-repeat,#f7941e}.ds-reg{position:absolute;inline-size:1.25rem;block-size:1.25rem;color:var(--frame,#0c3f68)}.ds-reg svg{inline-size:100%;block-size:100%}.ds-reg-a{inset-block-start:-.7rem;inset-inline-end:-.7rem}.ds-reg-b{inset-block-end:35%;inset-inline-start:-.7rem}.ds-plate figcaption{position:absolute;inset-inline-start:-2px;inset-block-end:1.25rem;display:flex;flex-direction:column;padding:.6rem .9rem;border:2px solid var(--frame,#0c3f68);border-radius:4px;background:#fff;font:400 .9rem/1.35 Figtree,sans-serif;color:#475a6d}.ds-plate strong{color:#0c3f68;font-size:1rem}"
     },
     {
       "name": "Contact Channel",
+      "kind": "card",
+      "refersTo": "channel",
+      "description": "Soft-framed contact row; full frame on hover; phone value LTR-isolated.",
+      "html": "<a class=\"ds-channel\" href=\"#\"><svg class=\"ds-icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 3.5h3.2l1.6 4.2-2.1 1.3a11 11 0 0 0 7.3 7.3l1.3-2.1 4.2 1.6V19a1.5 1.5 0 0 1-1.6 1.5A16.5 16.5 0 0 1 3.5 5.1 1.5 1.5 0 0 1 5 3.5Z\"/></svg><span class=\"ds-ctext\"><span class=\"ds-cname\">Phone</span><bdo dir=\"ltr\" class=\"ds-cval\">0750 000 0000</bdo></span></a>",
+      "css": ".ds-channel{display:flex;align-items:center;gap:1rem;padding:1rem 1.25rem;min-block-size:4.5rem;max-inline-size:22rem;border:2px solid var(--frame-soft,#c6d3e0);border-radius:4px;text-decoration:none;color:#142333;background:#fff;transition:border-color .2s cubic-bezier(.16,1,.3,1)}.ds-channel:hover{border-color:var(--frame,#0c3f68)}.ds-channel:focus-visible{outline:3px solid var(--focus,#0c3f68);outline-offset:3px;}.ds-channel>.ds-icon{inline-size:1.9rem;block-size:1.9rem;flex:none;color:#9a4f00}.ds-ctext{display:flex;flex-direction:column}.ds-cname{font:650 .9rem/1.35 Figtree,sans-serif;color:#475a6d}.ds-cval{display:block;text-align:start;font:750 1.15rem/1.3 Archivo,sans-serif;color:#0c3f68}"
+    },
+    {
+      "name": "Ornament Band",
       "kind": "custom",
-      "refersTo": "contact-channel",
-      "description": "Full-row contact link.",
-      "html": "<a class=\"ds-ch\" href=\"#\"><span class=\"ds-ic\"></span><span><small>Phone</small><b>0770 155 8796</b></span></a>",
-      "css": ".ds-ch{display:flex;gap:1rem;align-items:center;padding:1rem 1.25rem;border:1px solid #d3dde7;border-radius:12px;color:#0c3f68;text-decoration:none;font-family:Figtree,sans-serif}.ds-ch small{display:block;color:#4a5b6d}.ds-ic{width:2.75rem;height:2.75rem;border-radius:50%;background:#0c3f68}"
+      "refersTo": "ornament",
+      "description": "Row of the logo cube-and-S ornament in orange ink; the section divider instead of a rule.",
+      "html": "<div class=\"ds-ornament\" aria-hidden=\"true\"></div>",
+      "css": ".ds-ornament{block-size:20px;inline-size:100%;opacity:.9;background-image:url(\"data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2740%27 height=%2720%27 viewBox=%270 0 40 20%27%3E%3Cg fill=%27none%27 stroke=%27%23f7941e%27 stroke-width=%271.4%27 stroke-linejoin=%27round%27%3E%3Cpath d=%27M12 2.8 18.5 6.5v7L12 17.2 5.5 13.5v-7Z%27/%3E%3Cpath d=%27M5.5 6.5 12 10l6.5-3.5M12 10v7.2%27/%3E%3C/g%3E%3Ccircle cx=%2731%27 cy=%2710%27 r=%271.8%27 fill=%27%23f7941e%27/%3E%3C/svg%3E\");background-repeat:repeat-x;background-position:center;background-size:40px 20px}"
     }
   ],
   "narrative": {
-    "northStar": "The company, plainly and well",
-    "overview": "Category-standard software company site in the logo's navy and orange, with real people and stated facts only.",
+    "northStar": "The Suli Trilingual Press",
+    "overview": "**Creative North Star: \"The Suli Trilingual Press\"**\n\nThe site is a two-colour proof sheet pulled in a Sulaymaniyah print shop that sets every line in three scripts. Light mode is bright white stock; dark mode is the navy-black printing plate itself. There are only two inks, the logo's navy and orange, and every surface is either stock, a tint of stock, or a solid plate of ink. Separation happens with full four-sided frames, ornament rows and space, never with hairline rules or single-edge accents.\n\nDensity is calm and phone-first: big type in the page language, then the same claim proofed in the other two scripts at small size, then the real team and a way to call. The world refuses the IT-category default (blue gradient, laptop hero, icon-card grid) and equally refuses the vintage-newspaper costume: no distressed textures, no column rules, no fake mastheads with dates and prices.\n\nKurdish (Sorani, `ckb`) is the default language and is RTL, as is Arabic; English is LTR. The theme is Auto by default and follows the system, with explicit Light and Dark overrides.",
     "keyCharacteristics": [
-      "Navy carries, orange accents",
-      "Archivo headings, Figtree body",
-      "Ruled lists over cards",
-      "Call/WhatsApp one tap away"
+      "Two inks only (navy, orange) on white stock or a navy-black plate.",
+      "Every container is a closed four-sided frame (2px) with a 4px corner.",
+      "Registration marks and the logo-derived cube ornament are the only decoration.",
+      "Each script gets its own type pair and its own line height; Arabic-script text is never letter-spaced.",
+      "Real photography only, printed as natural-colour photos inside framed plates.",
+      "Flat: the one blurred shadow in the system belongs to the floating menu."
     ],
     "rules": [
       {
-        "name": "The Logo Pair Rule",
-        "body": "Only navy and orange carry colour.",
+        "name": "The Two Inks Rule",
+        "body": "Only navy and orange are inks. Any new colour must be a tint of the stock, a shade of one ink, or an overprint of the two. No third hue, no gradients.",
         "section": "colors"
       },
       {
-        "name": "Orange Is Never Body Text",
-        "body": "Orange text only on navy.",
+        "name": "The Stock And Plate Rule",
+        "body": "Dark mode is not an inversion. White stock becomes the navy-black plate; frames lighten; the primary button changes ink from navy to orange (`ink-orange` on `navy-ink`) and the focus ring turns orange. Both token sets are defined three times: `:root` for light, `prefers-color-scheme: dark` guarded by `:root:not([data-theme=\"light\"])` for Auto, and `:root[data-theme=\"dark\"]` for the explicit override.",
         "section": "colors"
+      },
+      {
+        "name": "The Orange Carries No Text On White Rule",
+        "body": "On white stock, orange text and icons use `orange-text`; raw `ink-orange` is a fill, a mark or an underline only.",
+        "section": "colors"
+      },
+      {
+        "name": "The Script Owns Its Metrics Rule",
+        "body": "On `:lang(ckb)` and `:lang(ar)` the font tokens swap to Noto Kufi Arabic + Vazirmatn, body line height rises to 1.85, heading line height to 1.45, and letter-spacing is 0 everywhere. Negative tracking (`-0.025em`) is a Latin display device only.",
+        "section": "typography"
+      },
+      {
+        "name": "The Each Line In Its Own Script Rule",
+        "body": "When one surface sets text from several languages (edition strip, proof sheet, proof strip, language switch), each run carries its own `lang` and `dir` and picks its script's face. Brand and personal names are set in Archivo, `dir=\"ltr\"`, `translate=\"no\"`.",
+        "section": "typography"
+      },
+      {
+        "name": "The Mirror Only What Points Rule",
+        "body": "In RTL, only directional glyphs flip (`scale: -1 1` on the link arrow and anything marked as flippable); logos, the cube ornament, registration marks, photos and the phone glyph do not.",
+        "section": "layout"
+      },
+      {
+        "name": "The Native Digits Rule",
+        "body": "Kurdish and Arabic pages render numerals in Eastern Arabic digits (facts, phone number, copyright year); English uses Western digits. Phone numbers are always wrapped in `<bdo dir=\"ltr\">` so the digit groups never reorder.",
+        "section": "layout"
+      },
+      {
+        "name": "The Printed Not Lit Rule",
+        "body": "No other blurred drop shadows. If something needs to stand forward, put it on a plate of ink or inside a frame.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Overprint Rule",
+        "body": "Team and training photos are natural-colour photos on a light paper plate in both themes; people are never recoloured. The founder portrait is not multiplied: it is a cut-out natural-colour photo standing in front of a solid orange disc inside its framed plate.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Four Sides Rule",
+        "body": "A border is all four sides or none. No single-edge borders, no accent stripes, no column rules, no underline bars under headings.",
+        "section": "shapes"
       }
     ],
     "dos": [
-      "Use only stated facts",
-      "Keep contact one tap away"
+      "Do close every container with a 2px frame on all four sides and a 4px corner.",
+      "Do keep to two inks: navy `#0c3f68` and orange `#f7941e`, on white stock or the navy-black plate.",
+      "Do define every colour token for light, Auto-dark and explicit dark, and keep Auto as the default theme.",
+      "Do set Kurdish and Arabic in Noto Kufi Arabic + Vazirmatn with line height 1.85 and no letter-spacing.",
+      "Do write layout in logical properties and mirror only directional arrows in RTL.",
+      "Do render digits as Eastern Arabic in ckb/ar and wrap every phone number in `<bdo dir=\"ltr\">`.",
+      "Do print photos as natural-colour photo in framed plates, with clean print on team and training plates but not on the founder portrait.",
+      "Do separate sections with tinted bands, ornament rows and space.",
+      "Do label every fact and source every claim from real company information."
     ],
     "donts": [
-      "No invented testimonials or logos",
-      "No stock photos as staff",
-      "No eyebrow labels"
+      "Don't use one-sided borders, accent stripes, column rules or heading underline bars.",
+      "Don't use blurred drop shadows anywhere except the floating menu popover.",
+      "Don't use stock photos; only the real team, founder and training room.",
+      "Don't build icon-disc cards or icon-card grids.",
+      "Don't put eyebrows or kickers above headings.",
+      "Don't fabricate proof: no invented testimonials, client logos, ratings or numbers.",
+      "Don't add a third hue or a gradient.",
+      "Don't letter-space or uppercase Arabic-script text."
     ]
   }
 }

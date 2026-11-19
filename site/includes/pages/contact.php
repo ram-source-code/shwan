@@ -1,56 +1,34 @@
 <?php
-$local = iraq_mobile_local($site['phone']);
+$local = phone_local($site['phone']);
+$addr = t('address');
+$nt = '<span class="visually-hidden"> ' . e(t('new_tab')) . '</span>';
 ?>
 <section class="page-hero" aria-labelledby="page-title">
-  <div class="wrap">
-    <h1 id="page-title">Contact us</h1>
-    <p class="page-lead"><?= e($site['quote']['text']) ?> Call, message or visit us.</p>
+  <div class="wrap page-hero-inner">
+    <span class="reg reg-a" aria-hidden="true"><?= icon('regmark') ?></span>
+    <h1 id="page-title"><?= e(t('contact_title')) ?></h1>
+    <p class="page-lead"><?= e(t('contact_lead')) ?></p>
   </div>
 </section>
 
-<section class="section" aria-label="Ways to reach us">
+<section class="section" aria-labelledby="page-title">
   <div class="wrap contact-grid">
     <ul class="channels">
-      <li>
-        <a class="channel" href="tel:<?= e($site['phone']) ?>">
-          <?= icon('phone') ?>
-          <span class="channel-text"><span class="channel-name">Call</span><span class="channel-value" dir="ltr"><?= e($local) ?></span></span>
-        </a>
-      </li>
-      <li>
-        <a class="channel" href="https://wa.me/<?= e(substr($site['phone'], 1)) ?>" target="_blank" rel="noopener noreferrer">
-          <?= icon('chat') ?>
-          <span class="channel-text"><span class="channel-name">WhatsApp<span class="visually-hidden"> (opens in a new tab)</span></span><span class="channel-value" dir="ltr"><?= e($local) ?></span></span>
-        </a>
-      </li>
-      <li>
-        <a class="channel" href="mailto:<?= e($site['email']) ?>">
-          <?= icon('mail') ?>
-          <span class="channel-text"><span class="channel-name">Email</span><span class="channel-value"><?= e($site['email']) ?></span></span>
-        </a>
-      </li>
-      <li>
-        <a class="channel" href="<?= e($site['facebook']) ?>" target="_blank" rel="noopener noreferrer">
-          <?= icon('facebook') ?>
-          <span class="channel-text"><span class="channel-name">Facebook<span class="visually-hidden"> (opens in a new tab)</span></span><span class="channel-value">/entersoftgroup</span></span>
-        </a>
-      </li>
+      <li><a class="channel" href="tel:<?= e($site['phone']) ?>"><?= icon('phone') ?><span class="channel-text"><span class="channel-name"><?= e(t('call')) ?></span><bdo class="channel-value" dir="ltr"><?= e($local) ?></bdo></span></a></li>
+      <li><a class="channel" href="https://wa.me/<?= e(substr($site['phone'], 1)) ?>" target="_blank" rel="noopener noreferrer"><?= icon('chat') ?><span class="channel-text"><span class="channel-name"><?= e(t('whatsapp')) ?><?= $nt ?></span><bdo class="channel-value" dir="ltr"><?= e($local) ?></bdo></span></a></li>
+      <li><a class="channel" href="mailto:<?= e($site['email']) ?>"><?= icon('mail') ?><span class="channel-text"><span class="channel-name"><?= e(t('email')) ?></span><span class="channel-value" dir="ltr"><?= e($site['email']) ?></span></span></a></li>
+      <li><a class="channel" href="<?= e($site['facebook']) ?>" target="_blank" rel="noopener noreferrer"><?= icon('facebook') ?><span class="channel-text"><span class="channel-name"><?= e(t('facebook')) ?><?= $nt ?></span><span class="channel-value" dir="ltr">/entersoftgroup</span></span></a></li>
     </ul>
     <div class="visit">
-      <h2><?= icon('pin') ?>Visit our office</h2>
+      <h2><?= icon('pin') ?><?= e(t('visit_title')) ?></h2>
       <address>
-        <span translate="no"><?= e($site['name']) ?></span><br>
-        <?= e($site['address']['building']) ?><br>
-        <?= e($site['address']['street']) ?><br>
-        <?= e($site['address']['city']) ?>, <?= e($site['address']['region']) ?>, <?= e($site['address']['country']) ?>
+        <span translate="no">Entersoftgroup</span><br>
+        <?= e($addr[0]) ?><br><?= e($addr[1]) ?><br><?= e(implode(LANG === 'en' ? ', ' : '، ', array_slice($addr, 2))) ?>
       </address>
-      <p><a class="btn btn-secondary" href="<?= e($site['maps_url']) ?>" target="_blank" rel="noopener noreferrer"><?= icon('map') ?>Open in Google Maps<span class="visually-hidden"> (opens in a new tab)</span></a></p>
+      <p><a class="btn btn-secondary" href="<?= e($site['maps_url']) ?>" target="_blank" rel="noopener noreferrer"><?= icon('map') ?><?= e(t('maps')) ?><?= $nt ?></a></p>
     </div>
   </div>
 </section>
 <?php
-return [
-    'title' => 'Contact us',
-    'description' => 'Call or WhatsApp Entersoftgroup on 0770 155 8796, email info@entersoftgroup.com, or visit us at Max Plaza, Shakraka, Sulaymaniyah.',
-    'path' => '/contact',
-];
+[$mt, $md] = t('meta')['contact'];
+return ['title' => $mt, 'description' => $md, 'path' => '/contact'];
