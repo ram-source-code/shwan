@@ -241,6 +241,14 @@ main:focus { outline: none; }
 .reason p { color: var(--muted); max-inline-size: 48ch; }
 
 .team-grid { display: grid; gap: clamp(1.25rem, 1rem + 1.5vw, 2rem); grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (max-width: 45.99rem) {
+  .hero { padding-block-start: 1.25rem; }
+  .hero-figure { order: -1; inline-size: min(100%, 19rem); }
+  .hero-figure::before { inset-inline: 4%; inset-block-end: 0; }
+  .hero-photo { display: block; block-size: min(19rem, 40svh); overflow: hidden; }
+  .hero-photo img { block-size: 100%; object-fit: cover; object-position: 50% 0; }
+  .hero-figure figcaption { inset-block-end: 0.75rem; }
+}
 @media (min-width: 46rem) { .team-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
 .member { display: flex; flex-direction: column; }
 .member-photo { order: -1; margin-block-end: 1rem; border-radius: var(--radius); overflow: hidden; background: var(--tint-2); box-shadow: 0 0 0 1px var(--line); }
