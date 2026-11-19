@@ -9,7 +9,6 @@ return [
     'menu' => 'لیست',
     'language' => 'زمان',
     'theme' => 'ڕووکار',
-    'theme_auto' => 'خۆکار',
     'theme_light' => 'ڕووناک',
     'theme_dark' => 'تاریک',
     'call' => 'پەیوەندی بکە',

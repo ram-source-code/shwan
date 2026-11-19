@@ -9,7 +9,6 @@ return [
     'menu' => 'القائمة',
     'language' => 'اللغة',
     'theme' => 'المظهر',
-    'theme_auto' => 'تلقائي',
     'theme_light' => 'فاتح',
     'theme_dark' => 'داكن',
     'call' => 'اتصل',

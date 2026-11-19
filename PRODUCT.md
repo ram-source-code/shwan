@@ -32,7 +32,7 @@ Visitors decide by phone call or WhatsApp; the office is at Max Plaza, Shakraka,
 - Skill levels shown on the old site: Consulting & Marketing 72%, IT solution & troubleshooting 81%, UI/UX solution 72%.
 - Contact: +964 770 155 8796, info@entersoftgroup.com, facebook.com/entersoftgroup.
 - No contact form, no database (confirmed); content in one file per language.
-- Light/Dark/Auto theme switch, default Auto (follows the device) until the visitor chooses (confirmed).
+- Light/Dark theme toggle; the site follows the device until the visitor uses the toggle (confirmed, no visible Auto button).
 - Visual material: real team and training-room photos only; the old theme's stock photos are to be replaced by SVG art made for this site (confirmed). Redesign requested: the previous category-standard look reads as generic.
 
 ## Brand Commitments

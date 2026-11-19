@@ -29,7 +29,7 @@ site/                       upload the CONTENTS of this folder to public_html/
 
 - Kurdish Sorani is the default at `/`, English is at `/en/` and Arabic is at `/ar/`. Each page links its two other versions (`hreflang`), and the switcher in the top strip keeps the visitor on the same page.
 - Old `*.html` URLs from the previous English site redirect to the matching `/en/` page.
-- The theme switch (Auto / Light / Dark) is stored in `localStorage` key `esg-theme` only when the visitor picks Light or Dark. Auto follows the device. With JS off the site follows the device and the switch is hidden.
+- The theme toggle (Light / Dark) follows the device until the visitor clicks it; the choice is then stored in `localStorage` key `esg-theme`. The active button always shows the theme on screen. With JS off the site follows the device and the switch is hidden.
 - Fonts: Archivo + Figtree for Latin; Noto Kufi Arabic (headings, subset) + Vazirmatn (body) for Kurdish/Arabic. **If you add Kurdish/Arabic text with new letters, re-run the Kufi subset** (see CREDITS.md) or those letters will fall back to Vazirmatn.
 
 ## Where content lives

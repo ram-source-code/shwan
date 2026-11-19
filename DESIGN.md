@@ -144,7 +144,7 @@ The site is a two-colour proof sheet pulled in a Sulaymaniyah print shop that pr
 
 Density is calm and phone-first: big type in the page language saying what the company does (databases and IT), the call buttons, the four services, then the real team and a way to call. Other languages are reached only through the language switch: the same sentence is never shown three times. The world refuses the IT-category default (blue gradient, laptop hero, icon-card grid) and equally refuses the vintage-newspaper costume: no distressed textures, no column rules, no fake mastheads with dates and prices.
 
-Kurdish (Sorani, `ckb`) is the default language and is RTL, as is Arabic; English is LTR. The theme is Auto by default and follows the system, with explicit Light and Dark overrides.
+Kurdish (Sorani, `ckb`) is the default language and is RTL, as is Arabic; English is LTR. The theme follows the system by default; the visitor can override it with a Light/Dark toggle (no Auto button).
 
 **Key Characteristics:**
 - Two inks only (navy, orange) on white stock or a navy-black plate.
@@ -252,7 +252,7 @@ Stamped ink blocks: solid, square-shouldered, no gradient.
 - **Hover / Focus:** colour shift over 0.2s on an expo-out ease, plus a 1px lift (motion permitting); focus is a 3px solid ring offset 3px, navy in light, orange in dark and on plates.
 
 ### Masthead and Navigation
-- **Edition strip:** a full-width navy (dark: near-black) band holding the brand name in Archivo, the language switch (native names, active language as an orange chip) and the Auto/Light/Dark theme switch (three icon buttons in a thin framed group, active in orange).
+- **Edition strip:** a full-width navy (dark: near-black) band holding the language switch (native names, active language as an orange chip) and the Light/Dark theme switch (two icon buttons in a thin framed group; the button for the theme currently showing, system or chosen, is active in orange).
 - **Framed nav box:** below the strip, the logo and navigation sit in a full 2px framed box inside the gutter, never a bare bar. Wide screens show links inline with a small Call button; narrow screens show a framed Menu button opening a framed popover list. The current page is a navy (dark: orange) filled chip. The logo swaps to its dark variant on the plate.
 
 ### Fact Boxes

@@ -93,7 +93,6 @@ if ($og['path'] === '') $og['path'] = '/';
 <?php endforeach; ?>
         </nav>
         <div class="theme-switch" role="group" aria-label="<?= e(t('theme')) ?>" hidden>
-          <button type="button" data-theme-set="auto" aria-pressed="true"><?= icon('auto') ?><span class="visually-hidden"><?= e(t('theme_auto')) ?></span></button>
           <button type="button" data-theme-set="light" aria-pressed="false"><?= icon('sun') ?><span class="visually-hidden"><?= e(t('theme_light')) ?></span></button>
           <button type="button" data-theme-set="dark" aria-pressed="false"><?= icon('moon') ?><span class="visually-hidden"><?= e(t('theme_dark')) ?></span></button>
         </div>

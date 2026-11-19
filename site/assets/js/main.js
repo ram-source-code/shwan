@@ -10,7 +10,7 @@
     else delete root.dataset.theme;
     const effective = root.dataset.theme || (dark.matches ? 'dark' : 'light');
     if (meta) meta.content = effective === 'dark' ? '#06111b' : '#0c3f68';
-    switcher?.querySelectorAll('button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.themeSet === (choice || 'auto'))));
+    switcher?.querySelectorAll('button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.themeSet === effective)));
   };
   if (switcher) {
     switcher.hidden = false;
@@ -18,7 +18,7 @@
       const btn = e.target.closest('button[data-theme-set]');
       if (!btn) return;
       const choice = btn.dataset.themeSet;
-      try { choice === 'auto' ? localStorage.removeItem(KEY) : localStorage.setItem(KEY, choice); } catch {}
+      try { localStorage.setItem(KEY, choice); } catch {}
       apply(choice);
     });
   }
