@@ -82,6 +82,7 @@ if ($og['path'] === '') $og['path'] = '/';
     'eagerness' => 'moderate']]]) ?></script>
 </head>
 <body>
+<!--email_off-->
 <a class="skip-link" href="#main"><?= e(t('skip')) ?></a>
 <header class="site-header">
   <div class="edition">
@@ -163,5 +164,6 @@ if ($og['path'] === '') $og['path'] = '/';
   </div>
   <div class="footer-base"><p>© <?= e(num(date('Y'))) ?> <span translate="no"><?= e($site['name']) ?></span></p></div>
 </footer>
+<!--/email_off-->
 </body>
 </html>

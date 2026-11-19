@@ -53,6 +53,8 @@ PHP: the host runs 8.4 (set it in hPanel → Advanced → PHP Configuration). Th
 
 ## Deploy
 
+**Behind Cloudflare:** the page body is wrapped in `<!--email_off-->` … `<!--/email_off-->`, so Cloudflare's Email Address Obfuscation leaves the email links alone. Without it Cloudflare swaps them for "[email protected]" and injects `email-decode.min.js`, which the CSP blocks (no nonce). Keep the markers, or turn off Scrape Shield → Email Address Obfuscation in Cloudflare. Rocket Loader must stay off for the same reason.
+
 1. Back up: hPanel → File Manager → zip `public_html` and download it. This zip is the rollback copy. There is no database.
 2. Turn maintenance on: create an empty `data/maintenance.flag`. Visitors get 503 + `Retry-After`. To bypass it yourself, set a browser cookie `maint` = the production `MAINT_KEY`.
 3. Upload the code (SFTP or File Manager). Never overwrite `data/`.
