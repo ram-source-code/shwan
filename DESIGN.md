@@ -159,7 +159,7 @@ Kurdish (Sorani, `ckb`) is the default language and is RTL, as is Arabic; Englis
 Two printing inks and their grounds; the dark theme swaps white stock for the inked plate rather than inverting the palette.
 
 ### Primary
-- **Logo Navy Ink** (`ink-navy`): headings, frames, primary buttons, the edition strip, the lead service panel, the quote band and the footer plate in light mode. It is the ink everything is printed in.
+- **Logo Navy Ink** (`ink-navy`): headings, frames, primary buttons, the lead service panel, the quote band and the footer plate in light mode. It is the ink everything is printed in.
 - **Deep Navy** (`navy-deep`): hover state of navy buttons.
 - **Navy Ink Black** (`navy-ink`): text set on orange (accent buttons, active language and theme chips, text selection).
 
@@ -176,7 +176,7 @@ Two printing inks and their grounds; the dark theme swaps white stock for the in
 - **Soft Frame** (`frame-soft`): the quieter frame for contact channels at rest.
 - **Plate Muted** (`plate-muted`): secondary text on a navy plate.
 - **Photo Ground** (`photo-ground`): neutral fill behind photos while loading.
-- **Dark Plate** (`plate-dark`): in dark mode, the edition strip, lead proof panel, quote band and footer sink to near-black so they still read as the deepest ink.
+- **Dark Plate** (`plate-dark`): in dark mode, the lead service panel, quote band and footer sink to near-black so they still read as the deepest ink.
 - **Dark Stock** (`stock-dark`, `stock-tint-dark`): dark page ground and its tint band.
 - **Dark Ink Set** (`heading-dark`, `body-text-dark`, `muted-text-dark`): headings, body and muted text on the dark plate.
 - **Dark Frames** (`frame-dark`, `frame-soft-dark`): frames lighten to a pale navy so the box still draws in dark mode.
@@ -204,12 +204,12 @@ Two printing inks and their grounds; the dark theme swaps white stock for the in
 - **Proof** (750, `clamp(1.5rem, 1.25rem + 1vw, 2.1rem)`, 1.4; Arabic script 1.7): the three-script claim on the proof sheet, each panel in its own script's display face.
 - **Title** (700, `clamp(1.2rem, 1.1rem + 0.45vw, 1.4rem)`): reason headings, member names, leads.
 - **Body** (400, `clamp(1rem, 0.96rem + 0.2vw, 1.125rem)`, 1.6 Latin / 1.85 Arabic script): running text, kept to 62ch in prose blocks.
-- **Label** (650 to 700, `clamp(0.875rem, 0.85rem + 0.1vw, 0.9375rem)`): fact labels, channel names, proof-strip chips, the edition strip. Sentence case; never uppercase, never tracked.
+- **Label** (650 to 700, `clamp(0.875rem, 0.85rem + 0.1vw, 0.9375rem)`): fact labels, channel names, the language list. Sentence case; never uppercase, never tracked.
 
 ### Named Rules
 **The Script Owns Its Metrics Rule.** On `:lang(ckb)` and `:lang(ar)` the font tokens swap to Noto Kufi Arabic + Vazirmatn, body line height rises to 1.85, heading line height to 1.45, and letter-spacing is 0 everywhere. Negative tracking (`-0.025em`) is a Latin display device only.
 
-**The Each Line In Its Own Script Rule.** When one surface sets text from several languages (edition strip, proof sheet, proof strip, language switch), each run carries its own `lang` and `dir` and picks its script's face. Brand and personal names are set in Archivo, `dir="ltr"`, `translate="no"`.
+**The Each Line In Its Own Script Rule.** When one surface sets text from several languages (the language list), each run carries its own `lang` and `dir` and picks its script's face. Brand and personal names are set in Archivo, `dir="ltr"`, `translate="no"`.
 
 ## Layout
 
@@ -236,7 +236,7 @@ Flat by construction. Depth is printed, not lit: a plate of solid ink sits behin
 
 ## Shapes
 
-Every container is a closed rectangle: a 2px frame on all four sides (1.5px for small chips) with a slightly softened 4px corner; images inside plates take a 2px corner. Two drawn devices come from the press and the logo: the registration mark (a circle crossed by full-length hairlines) placed overlapping a frame corner or edge, and the cube-and-S ornament, a hexagonal cube repeated as a band (40 by 20px tile) and used as a bullet glyph in the edition strip and reasons. No circles: the founder cutout sits on the plain paper ground (an orange disc behind the cutout exposed its edge halo and competed with the headline).
+Every container is a closed rectangle: a 2px frame on all four sides (1.5px for small chips) with a slightly softened 4px corner; images inside plates take a 2px corner. Two drawn devices come from the press and the logo: the registration mark (a circle crossed by full-length hairlines) placed overlapping a frame corner or edge, and the cube-and-S ornament, a hexagonal cube repeated as a band (40 by 20px tile) and used as a bullet glyph in the reasons. No circles: the founder cutout sits on the plain paper ground (an orange disc behind the cutout exposed its edge halo and competed with the headline).
 
 ### Named Rules
 **The Four Sides Rule.** A border is all four sides or none. No single-edge borders, no accent stripes, no column rules, no underline bars under headings.
@@ -252,7 +252,7 @@ Stamped ink blocks: solid, square-shouldered, no gradient.
 - **Hover / Focus:** colour shift over 0.2s on an expo-out ease, plus a 1px lift (motion permitting); focus is a 3px solid ring offset 3px, navy in light, orange in dark and on plates.
 
 ### Masthead and Navigation
-- **Edition strip:** a full-width navy (dark: near-black) band holding the language switch (native names, active language as an orange chip) and the Light/Dark theme switch (two icon buttons in a thin framed group; the button for the theme currently showing, system or chosen, is active in orange).
+- **Header:** a single framed bar (no top strip): logo, then a globe language button (globe + current language name; globe only on phones) opening a small framed list of the three languages in their own scripts, then the menu. The Light/Dark toggle lives inside the menu (inline at the end of the bar on wide screens). Text links are orange (`orange-text` on stock, `ink-orange` underlines and icons on plates).
 - **Framed nav box:** below the strip, the logo and navigation sit in a full 2px framed box inside the gutter, never a bare bar. Wide screens show links inline with a small Call button; narrow screens show a framed Menu button opening a framed popover list. The current page is a navy (dark: orange) filled chip. The logo swaps to its dark variant on the plate.
 
 ### Fact Boxes
