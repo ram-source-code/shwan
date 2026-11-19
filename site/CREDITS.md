@@ -14,9 +14,14 @@
 | Archivo font | Omnibus-Type, via Fontsource 5.3.0 | — | OFL-1.1 |
 | Figtree font | Erik Kennedy, via Fontsource 5.3.0 | — | OFL-1.1 |
 | All text | Client copy from the old homepage; minor grammar and typo fixes ("help" → "helps", "travelshooting" → "troubleshooting", "Entrsoftgroup" → "Entersoftgroup") | — | Client-owned |
-| `work-desk`, `office-desk-bw`, `laptop-pair`, `portrait-small`, `feature-portrait`, `notes-desk`, `gallery-1…8`, `portrait-round` | Old site theme images (`banner/01`, `video-bg`, `tile-gallery/02-03`, `feature-img`, `skill-img`, `portfolio/01-05`, `laest-post/01-03`, `test-author`), added at the client's request | re-encoded WebP/AVIF | **Stock that came with the AndroThemes theme. [CLIENT: confirm the licence allows use outside the theme demo.]** Shown captioned "Illustrative photo" / "Illustrative stock photography", never as the team, office or portfolio. |
+| `founder-duo-*`, `duo-*-370`, `training-duo-400` | Navy/white duotone prints of the client's own photos above | Pillow (ImageOps.colorize) | Client-owned |
+| `logo-dark-*` | Client logo with the navy ink recoloured to near-white for dark mode | Pillow | Client-owned |
 | `logo-badge-*` | Old site `tile-gallery/icon.png` (round logo badge) | resized | Client-owned |
+| `ornament.svg`, registration mark, cube fleuron and theme icons in `icons.svg` | Developer, drawn for this site from the logo's cube-and-S mark | hand-written SVG | Made for this site |
+| Noto Kufi Arabic (subset to the site's characters) | Google, via Fontsource 5.3.0 | fonttools pyftsubset | OFL-1.1, `assets/fonts/OFL-noto-kufi-arabic.txt` |
+| Vazirmatn (Arabic-script range) | Saber Rastikerdar, via Fontsource 5.3.0 | — | OFL-1.1, `assets/fonts/OFL-vazirmatn.txt` |
+| Kurdish and Arabic text | Drafted by Claude from the client's English copy | — | **[CLIENT: native-speaker review before launch]** |
 
-Every image the old homepage used is now on the site. The only ones left out are the identical duplicate logo files (`logo-white.png`, `icon-2.png`) and the theme's unused 16 px favicon.
+The old theme's stock photos (banner, video background, feature, skill, gallery, portfolio, news and testimonial images) were removed in the redesign at the client's request and replaced by SVG/typographic design. They stay only in `_source/` for reference.
 
 No generated (AI) images.

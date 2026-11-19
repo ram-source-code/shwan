@@ -24,14 +24,16 @@ A Suli-based team (founded by Shwan Baglama) with 15+ years of experience and 99
 
 ## Operating Context
 
-Visitors decide by phone call or WhatsApp; the office is at Max Plaza, Shakraka, behind the Court House, 4th floor, Department 9. English-only site (confirmed).
+Visitors decide by phone call or WhatsApp; the office is at Max Plaza, Shakraka, behind the Court House, 4th floor, Department 9. Languages (confirmed): Kurdish Sorani (default, RTL, at /), English (/en/), Arabic (RTL, /ar/). Kurdish/Arabic text is drafted by Claude and must be reviewed by a native speaker before launch.
 
 ## Capabilities and Constraints
 
 - Confirmed claims from the old site: 15+ years of experience; 99+ projects done; software available in Kurdish, Arabic and English; customisable to corporate design; 24/7 online support; in-house IT security experts; competitive pricing with pre-approved extra costs; background in advertising, design, branding, PR, research and strategic planning.
 - Skill levels shown on the old site: Consulting & Marketing 72%, IT solution & troubleshooting 81%, UI/UX solution 72%.
 - Contact: +964 770 155 8796, info@entersoftgroup.com, facebook.com/entersoftgroup.
-- No contact form, no database (confirmed).
+- No contact form, no database (confirmed); content in one file per language.
+- Light/Dark/Auto theme switch, default Auto (follows the device) until the visitor chooses (confirmed).
+- Visual material: real team and training-room photos only; the old theme's stock photos are to be replaced by SVG art made for this site (confirmed). Redesign requested: the previous category-standard look reads as generic.
 
 ## Brand Commitments
 
@@ -42,7 +44,7 @@ Visitors decide by phone call or WhatsApp; the office is at Max Plaza, Shakraka,
 
 - Old site text and images in `_source/` (fetched from www.entersoftgroup.com, Nov 2026).
 - No real testimonials, client logos, case studies or portfolio items exist: the old site's ones were theme demo content (e.g. "Rosalina D. William", "mixer website solution"). Never fabricate them.
-- Team photos: from the old site; whether each is a real staff photo is unconfirmed.
+- Team photos and the training-room photo: from the old site (real). The old theme's stock photos are not Entersoftgroup material and are being removed.
 
 ## Product Principles
 

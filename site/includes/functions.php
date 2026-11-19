@@ -25,11 +25,11 @@ function icon(string $name, string $label = ''): string {
         . e(asset('assets/img/icons.svg')) . '#' . e($name) . '"/></svg>';
 }
 
-function picture(string $name, array $widths, int $w, int $h, string $alt, string $sizes, bool $lcp = false, string $class = ''): string {
+function picture(string $name, array $widths, int $w, int $h, string $alt, string $sizes, bool $lcp = false, string $class = '', bool $eager = false): string {
     $set = fn(string $ext) => implode(', ', array_map(
         fn(int $x) => asset("assets/img/$name-$x.$ext") . " {$x}w", $widths));
     $largest = max($widths);
-    $loading = $lcp ? 'fetchpriority="high"' : 'loading="lazy" decoding="async"';
+    $loading = $lcp ? 'fetchpriority="high"' : ($eager ? 'decoding="async"' : 'loading="lazy" decoding="async"');
     return '<picture' . ($class ? ' class="' . e($class) . '"' : '') . '>'
         . '<source type="image/avif" srcset="' . e($set('avif')) . '" sizes="' . e($sizes) . '">'
         . '<img src="' . e(asset("assets/img/$name-$largest.webp")) . '" srcset="' . e($set('webp')) . '" sizes="' . e($sizes) . '"'
@@ -37,9 +37,32 @@ function picture(string $name, array $widths, int $w, int $h, string $alt, strin
         . '</picture>';
 }
 
-function illus(string $name, array $widths, int $w, int $h, string $alt, string $sizes, string $class = ''): string {
-    return '<figure class="illus' . ($class ? ' ' . e($class) : '') . '">' . picture($name, $widths, $w, $h, $alt, $sizes)
-        . '<figcaption>Illustrative photo</figcaption></figure>';
+const LANGS = ['ckb' => '', 'en' => '/en', 'ar' => '/ar'];
+
+function lurl(string $path = '/', ?string $lang = null): string {
+    $prefix = LANGS[$lang ?? LANG];
+    return url($prefix . ($path === '/' ? '' : $path));
+}
+
+function labs(string $path = '/', ?string $lang = null): string {
+    $prefix = LANGS[$lang ?? LANG];
+    return abs_url($prefix . ($path === '/' ? '' : $path));
+}
+
+function t(string $key): mixed {
+    return $GLOBALS['L'][$key];
+}
+
+function num(string $s): string {
+    return LANG === 'en' ? $s : strtr($s, ['0' => '٠', '1' => '١', '2' => '٢', '3' => '٣', '4' => '٤', '5' => '٥', '6' => '٦', '7' => '٧', '8' => '٨', '9' => '٩']);
+}
+
+function tx(string $text): string {
+    return str_replace('Entersoftgroup', '<bdi translate="no">Entersoftgroup</bdi>', e($text));
+}
+
+function phone_local(string $e164): string {
+    return num(iraq_mobile_local($e164));
 }
 
 function iraq_mobile_local(string $e164): string {
@@ -99,10 +122,11 @@ function og_tags(array $p): string {
         'og:image:width' => 1200,
         'og:image:height' => 630,
         'og:image:alt' => $p['og_alt'] ?? 'Entersoftgroup logo',
-        'og:locale' => 'en_US',
+        'og:locale' => $p['locale'],
     ];
     $o = '';
     foreach ($t as $k => $v) $o .= '<meta property="' . $k . '" content="' . e((string)$v) . "\">\n";
+    foreach ($p['alternates'] ?? [] as $alt) $o .= '<meta property="og:locale:alternate" content="' . e($alt) . "\">\n";
     $tw = ['twitter:card' => 'summary_large_image', 'twitter:title' => $t['og:title'], 'twitter:description' => $t['og:description'],
            'twitter:image' => $t['og:image'], 'twitter:image:alt' => $t['og:image:alt']];
     foreach ($tw as $k => $v) $o .= '<meta name="' . $k . '" content="' . e((string)$v) . "\">\n";

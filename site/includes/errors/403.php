@@ -1,5 +1,8 @@
 <?php
 $code = 403;
-$err_title = 'Access denied';
-$err_text = 'This address is not open to visitors.';
-require __DIR__ . "/_page.php";
+$msgs = [
+    'ckb' => ['ڕێگەپێنەدراو', 'ئەم ناونیشانە بۆ سەردانکەران کراوە نییە.'],
+    'en' => ['Access denied', 'This address is not open to visitors.'],
+    'ar' => ['الوصول مرفوض', 'هذا العنوان غير متاح للزوار.'],
+];
+require __DIR__ . '/_page.php';
